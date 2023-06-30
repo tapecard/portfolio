@@ -68,12 +68,12 @@
 			"url"  : "",
 			"width" : "300"
 			},
-		"Anvil Mountain Logo":{
+		"Anvil Mountain Forge Logo":{
 			"type" : "commart",
 			"icon" : "images/icons/AMF.png",
 			"image": "images/content/AMF.png",
-			"alt": "black and white illustration of a 'monumental' forge",
-			"title": "Anvil Mountain Logo",
+			"alt": "black and white illustration of a Monumental forge",
+			"title": "Anvil Mountain Forge Logo",
 			"date" : "2021",
 			"body" : "Anvil Mountain Logo. Adobe Illustrator",
 			"url"  : "",
@@ -87,8 +87,8 @@
 				"images/content/cecomTodaycover.jpg"
 				],
 			"alt": [
-				"Cover Art",
-				"Published Cover"
+				"Cover Art combining soldiers face with a QR code",
+				"Published Cover Art combining after some hack edited it for publication"
 				],
 			"title": "Ceceom Today Cover Illustration",
 			"date" : "2012",
@@ -101,7 +101,7 @@
 			"icon" : "images/icons/steelpulse.png",
 			"image": "images/content/steelpulse.png",
 			"title": "Steel Pulse Poster",
-			"alt": "Illustration of sun and beach with band logo",
+			"alt": "Illustration of a sun and beach with the bands logo",
 			"date" : "2008",
 			"body" : "Concert Poster for Steel Pulse Show at Doce Lunas Resort. Adobe Photoshop",
 			"url"  : "",

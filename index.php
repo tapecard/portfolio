@@ -37,7 +37,7 @@
   
 <div id="master__wrapper">
 
-  <h1><a tabindex="1" href="mailto:tapecard@mindspring.com">Michael P. Cohen</a></h1>
+  <h1><a tabindex="1" href="mailto:mike.cohen@tapecard.com">Michael P. Cohen</a></h1>
 
   <div class="content__wrapper">
 
