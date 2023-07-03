@@ -30,7 +30,7 @@
   <script type="text/javascript" src="js/config.json"></script>
   <script type="text/javascript" src="js/main.js"></script>
 
-  <script src="js/owl.carousel.min.js"></script>
+  <script type="text/javascript" src="js/owl.carousel.min.js"></script>
 
 </head>
 <body>
@@ -47,7 +47,7 @@
 
 
       <div class="submenu__wrapper">
-        <div class="submenu__scroller"></div>
+        <div class="submenu__scroller owl-carousel"></div>
       </div>
 
       <div class="pointer__wrapper">

@@ -14,21 +14,21 @@ a:hover {
 }
 h1 {
 	margin: 0 auto; 
-	width: 800px;
+	width: 100%;
 	text-align: center;
-	background: url(../images/interface/stripUppera.png) 50px bottom no-repeat;
+	background: url(../images/interface/stripUppera.png) center bottom no-repeat;
 	height: 25px;
 	line-height: 1.75;
 	font-size: 12px;
 	font-family: Arial, Helvetica, sans-serif;
 	text-decoration: none;
 }
-.menu__wrapper button {
+.menu__wrapper a {
 	margin: 10px 10px 5px;
 	vertical-align: top;
     height: 30px;
     width: 80px;
-    display: inline;
+    display: inline-block;
     cursor: pointer;
     color: #777;
     font-size: 11px;
@@ -46,16 +46,21 @@ h1 {
     background-repeat: no-repeat;
     background-position: center;*/
 }
-.menu__wrapper button.selected {
+.menu__wrapper a.selected {
 	background-color: rgba(255, 255, 255, 0.75);
 	transition: all .5s linear;
-	/*box-shadow: 0 -7px 11px -2px rgba(0,0,0,.25) inset;*/
+	box-shadow: 0 -7px 11px -2px rgba(0,0,0,.25) inset;
 }
-.menu__wrapper button span {
+.menu__wrapper a>span {
+	display: inline-block;
+    width: inherit;
+    margin-top: 10px;
+}
+.menu__wrapper .optional {
 	display: none;
-    position: absolute;
     width: inherit;
     height: 50px;
+    background-image: none;
     background-position: center 72px;
     background-size: 90%;
     left: 47%;
@@ -63,7 +68,7 @@ h1 {
     left: 0;
     z-index: -1;
 }
-.menu__wrapper button:focus {
+.menu__wrapper a:focus {
 	color: red;
 }
 .content__wrapper,
@@ -113,7 +118,6 @@ h1 {
 }
 
 .submenu__scroller {
-    width: 2000px;
     text-align: left;
 }
 .submenu__group {
@@ -316,7 +320,7 @@ iframe  { zoom: 1;  }
 }
 .owl-nav {
 	position: absolute;
-	top: 30%;
+	top: 0;
     width: 100%;
 }
 .owl-carousel .owl-nav button {
@@ -468,10 +472,88 @@ iframe  { zoom: 1;  }
     background-image: url('../images/interface/bg04.png');
     background-repeat: repeat-x;
 }
-
 .footer {
 	position: fixed;
 	bottom:  0;
 	padding: 10px;
 	font-size: 12px;
 }
+
+@media screen and (max-width: 500px) {
+
+	.menu__wrapper a {
+		margin: 10px 10px 5px;
+		vertical-align: top;
+	    height: 30px;
+	    width: 80px;
+	    display: inline-block;
+	    cursor: pointer;
+	    color: #777;
+	    font-size: 11px;
+	    line-height: 1;
+	    border: 0;
+	    outline: none;
+	    background-color: transparent;
+	    border-radius: 20px;
+	    position: relative;
+	    transition: all 1.5s linear;
+	}
+	.menu__wrapper a>span {
+		display: inline-block;
+	    width: inherit;
+	    margin-top: 10px;
+	}
+	.submenu__wrapper {
+		width: 100%;
+	    height: 100px;
+	}
+
+	.submenu__group {
+		width: 100%;
+	}
+	.submenu__elements {
+		display: flex;
+		justify-content: space-evenly;
+		width: 100%;
+	}
+	.submenu__item {
+		margin: 0;
+		padding: 5px;
+	    margin-top: 20px;
+	    border: 1px solid transparent;
+	    height: initial;
+	    width: initial;
+	    display: inline-block;
+	    cursor: pointer;
+	    border-radius: 4px;
+	    box-sizing: border-box;
+	    background-color: transparent;
+	}
+	.submenu__item img {
+		width: 13vw;
+		height: 13vw
+	}
+	.pointer__arrow {
+	    transform: translate(-8px, 6px)
+	}
+	.pointer__track {
+		margin: 0;
+	}
+	.panel__wrapper {
+    	width: 100%;
+	}
+	.panel__body {
+	    width: 100%;
+	    margin: 0 10px 10px 10px;
+	}
+	.panel__content-wrapper {
+		width: 100%;
+	}
+	.owl-carousel .owl-stage-outer img {
+    	margin-bottom: 0;
+	}
+	.owl-carousel .owl-item img {
+		width: auto;
+	}
+}
+

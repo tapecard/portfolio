@@ -79,6 +79,23 @@
 			"url"  : "",
 			"width" : "250"
 			},
+		"Beach Day #3":{
+			"type" : "fineart",
+			"icon" : "images/icons/beachday.png",
+			"image": [
+				"images/content/BeachDayDrawing3.jpg",
+				"images/content/beachDayPainting3.png"
+				],
+			"alt": [
+				"Realistic charcoal drawing of 3 beach umbrellas",
+				"Abstract water color painting of 3 beach umbrellas"
+				],
+			"title": "Beach Day #3",
+			"date" : "2022",
+			"body" : "Charcoal and Guash on Paper",
+			"url"  : "",
+			"width" : "350"
+			},
 		"Ceceom Today Cover":{
 			"type" : "commart",
 			"icon" : "images/icons/cecomToday.png",
@@ -111,7 +128,7 @@
 		"iconimage":"../images/interface/interactive0.png"
 	},
 	{
-	"The Other":{
+	"The_Other":{
 		"Earth Day Display":{
 			"type" : "video",
 			"icon" : "images/icons/eday2.png",

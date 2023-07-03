@@ -4,7 +4,7 @@ $(document).on('ready', function() {
   //let config = $.getScript(url);
   //let config = $.getJSON("js/config.json");
 $.getJSON("js/config.json", function(json) {
-//console.log(json[0]); // this will show the info it in firebug console
+// console.log(json[0]); // show the info it in firebug console
 // alert(json.length)
 var tabindex = 2;
   for (var key in json) {
@@ -14,10 +14,10 @@ var tabindex = 2;
             if (json[key].hasOwnProperty(sectionkey)) {
 
               // sets the Main Category row, presets the submenus:
-              
-              $('.menu__wrapper').append('<button tabindex="'+ tabindex++ +'">'+sectionkey+'<span style="background-image:url('+json[key].iconimage+');"></span></button>');
+              //console.log(sectionkey)
+              $('.menu__wrapper').append('<a href="#' + sectionkey + '" tabindex="'+ tabindex++ +'"><span>'+sectionkey.replace(/_/g, ' ') + '</span><span class="optional" style="background-image:url('+json[key].iconimage+');"></span></a>');
 
-              $('.submenu__scroller').append('<div class="submenu__group" data-title="'+sectionkey+'"><div class="submenu__elements"></div></div>');
+              $('.submenu__scroller').addClass('owl-carousel').append('<div class="submenu__group" data-hash="'+sectionkey+'"><div class="submenu__elements"></div></div>');
               }
                 for (var itemkey in json[key][sectionkey]) {
                   if (json[key][sectionkey].hasOwnProperty(itemkey)) {
@@ -25,9 +25,9 @@ var tabindex = 2;
                     //$('.submenu__wrapper').append('<div style="font-size:14px;text-indent:10px;">'+itemkey+'</div>');
                     //$('[data-title="'+sectionkey+'"]').append('<div>'+itemkey+'</div>');
                     let title = json[key][sectionkey][itemkey].title;
-        
+                    //console.log('[data-title="' + sectionkey + '"]')
                     // sets the submenu icon rows:
-                    $('[data-title="' + sectionkey + '"] .submenu__elements').append('<button class="submenu__item" data-title="' + title + '"><img src="' + json[key][sectionkey][itemkey].icon + '" alt="icon" /></button>');
+                    $('[data-hash="' + sectionkey + '"] .submenu__elements').append('<button class="submenu__item" data-title="' + title + '"><img src="' + json[key][sectionkey][itemkey].icon + '" alt="icon" /></button>');
 
 
                     // sets the content:
@@ -59,7 +59,7 @@ var tabindex = 2;
                       let imagePart = '<img src="' + json[key][sectionkey][itemkey].image + '" class="panel__image" style="width:' + json[key][sectionkey][itemkey].width + 'px" alt="' + json[key][sectionkey][itemkey].alt + '" />';
                       // check if theres multiple images :
                       if(json[key][sectionkey][itemkey].image.constructor === Array) {
-                        let arraystring = '<div class="owl-carousel">',
+                        let arraystring = '<div class="imagelayer owl-carousel">',
                             endarraystring = '</div>';
                         for ( elem in json[key][sectionkey][itemkey].image) {
                           arraystring += '<div><img class="panel__image" src="' + json[key][sectionkey][itemkey].image[elem] + '" class="panel__image" style="width:' + json[key][sectionkey][itemkey].width + 'px"  alt="' + json[key][sectionkey][itemkey].alt[[elem]] + '"/></div>';
@@ -76,25 +76,40 @@ var tabindex = 2;
       }
   }
 
-  let menuitems = $('.menu__wrapper button').length;
+  let menuitems = $('.menu__wrapper a').length;
   let menusWidth = 100;
   $('.menu__wrapper').css('width', menuitems * menusWidth).attr("data-width", menusWidth).append('<div class="cursor__wrapper"><div class="cursor" style="width:' + menusWidth + 'px"></div></div>');
 
   $('.owl-carousel').each(function() {
-    $(this).owlCarousel({
-      items: 1,
-      nav: true,
-      loop: true,
-      center: true,
-      stagePadding: 0
-    });
+    let $this = $(this);
+    if ($this.hasClass('imagelayer')) {
+      $(this).owlCarousel({
+        items: 1,
+        nav: true,
+        loop: false,
+        center: true,
+        stagePadding: 0
+      });
+    } else {
+      $(this).owlCarousel({
+        items: $('.submenu__scroller').length,
+        nav: false,
+        loop: false,
+        center: true,
+        stagePadding: 0,
+        URLhashListener:true,
+        autoplayHoverPause:false,
+        startPosition: 'URLHash'
+      });
+    }
+    
   });
 });
 
 // controls menu layer:
-  $('.menu__wrapper').on('click','button',function() {
+  $('.menu__wrapper').on('click','a',function() {
     let $this = $(this);
-    $('.menu__wrapper button').removeClass('selected');
+    $('.menu__wrapper a').removeClass('selected');
     $this.addClass('selected');
 
     $('.panel__wrapper, .pointer__wrapper').hide();
@@ -107,21 +122,26 @@ var tabindex = 2;
     //controls submenu slider
     let leftVal = $this.index() * -500;
     // 3D try: $('.submenu__scroller').css('transform', 'translateZ(-60px) rotateY(' + leftVal + 'deg)' );
-    $('.submenu__scroller').animate({'marginLeft':leftVal}, 200);
+    //  $('.submenu__scroller').animate({'marginLeft':leftVal}, 200);
 
-    let trackWidth = ($('[data-title="'+$this.text() + '"] button').length) * 100;
-    $('[data-title="' + $this.text() + '"] .submenu__elements, .pointer__track').css('width', trackWidth);
-
+    let mediaBreak = window.matchMedia("(max-width: 500px)");
+    if (mediaBreak.matches) {
+      let trackWidth = '100%';
+    } else {
+      let trackWidth = ($('[data-title="'+$this.text() + '"] button').length) * 100;
+    }
+    //let trackWidth = ($('[data-title="'+$this.text() + '"] button').length) * 100;
+    // $('[data-title="' + $this.text() + '"] .submenu__elements, .pointer__track').css('width', '100%');
     //index focus management
     let currentIndex = $this.index();
     let currentTabIndex =  Number($this.attr('tabindex'));
     
     //sets indexes on icons to 20's
-    $('.submenu__item').each(function(i){
+    $('.submenu__item').each(function(i) {
       $(this).attr('tabindex',-1);
     });
 
-    $('.submenu__group').eq(currentIndex).find('.submenu__item').each(function(i){
+    $('.submenu__group').eq(currentIndex).find('.submenu__item').each(function(i) {
       $(this).attr('tabindex', i + currentTabIndex + 2);
     });
 
@@ -130,17 +150,54 @@ var tabindex = 2;
 // controls thumbnail layer:
   $('.submenu__wrapper').on('click','.submenu__item',function() {
     let $this = $(this);
+    let currentitem = $this.index();
+    let NumbrOfIcons = $this.siblings().length + 1;
 
     $this.addClass('submenu__item--seenit');
-    let iconNums = $this.siblings().length + 1;
-    $('.pointer__track').css('width', iconNums * 100);
+    $('.pointer__track').css('width', NumbrOfIcons * 100);
+
+    // let trackWidth = $this.siblings().length + 1 * 100;
+    let measure = "px";
+    let trackWidth = '500px';
+    //let position = 100 / numofitems * currentitem;
+    let position = (currentitem)  * 100;
+    let mediaBreakPoint = window.matchMedia("(max-width: 500px)");
+    //console.log(mediaBreakPoint.matches)
+
+     if (mediaBreakPoint.matches) {
+        trackWidth = '100%';
+        measure = "%";
+        if (NumbrOfIcons == 5) {
+          if (currentitem == 0) {position = 11}
+          if (currentitem == 1) {position = 31}
+          if (currentitem == 2) {position = 50}
+          if (currentitem == 3) {position = 69}
+          if (currentitem == 4) {position = 89}
+        } else if (NumbrOfIcons == 4) {
+          if (currentitem == 0) {position = 15}
+          if (currentitem == 1) {position = 38}
+          if (currentitem == 2) {position = 62}
+          if (currentitem == 3) {position = 85}
+        }
+      }
+    
+    // let trackmeasuredwidth = $('.submenu__wrapper').css('width').replace('px','');
+
+    //let elementwidth = $('.submenu__item').css('width').replace('px','');
+    // let spacing = trackmeasuredwidth - (elementwidth * (numofitems + 1));
+    //let space = spacing / (numofitems + 1)
+    //let elements = elementwidth * (numofitems+1)
+    //let halfwidth = elementwidth / 2;
+    
+   // let position = currentitem * 20 -2;
+   //let position = ((Number(spacing) + Number(elementwidth)) * Number(currentitem)) - 8;
+   
+    $('.pointer__track').css('width', trackWidth);
     let title = $this.data('title');
     $('.panel__wrapper').hide();
     $('.panel__wrapper[data-title="' + title + '"], .pointer__wrapper').show();
-
-    let position = $this.index() * 100;
-    $('.pointer__arrow').animate({'left': position},200);
-
+    
+    $('.pointer__arrow').animate({'left': position + measure },200);
   });
 
 // tracks clicks for backgrounds: 
