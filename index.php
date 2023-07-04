@@ -21,14 +21,14 @@
 
   <link rel="stylesheet" type="text/css" href="css/normalize.min.css">
   <link rel="stylesheet" type="text/css" href="css/owl.carousel.min.css">
-  <link rel="stylesheet" type="text/css" href="css/first.css">
+  <link rel="stylesheet" type="text/css" href="css/first.min.css">
 
 
   <link rel="icon" type="image/png" href="images/favicon.png" />
 
   <script type="text/javascript" src="js/jquery-2.2.0.min.js"></script>
   <script type="text/javascript" src="js/config.json"></script>
-  <script type="text/javascript" src="js/main.js"></script>
+  <script type="text/javascript" src="js/main.min.js"></script>
 
   <script type="text/javascript" src="js/owl.carousel.min.js"></script>
 

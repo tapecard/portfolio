@@ -50,6 +50,7 @@ h1 {
 	background-color: rgba(255, 255, 255, 0.75);
 	transition: all .5s linear;
 	box-shadow: 0 -7px 11px -2px rgba(0,0,0,.25) inset;
+	color: red;
 }
 .menu__wrapper a>span {
 	display: inline-block;
@@ -67,9 +68,6 @@ h1 {
     top: -9px;
     left: 0;
     z-index: -1;
-}
-.menu__wrapper a:focus {
-	color: red;
 }
 .content__wrapper,
 .menu__wrapper {
@@ -503,6 +501,11 @@ iframe  { zoom: 1;  }
 	    width: inherit;
 	    margin-top: 10px;
 	}
+	.menu_shadow {
+		width: 800px;
+		clip-path: polgon(0 100% 30px 100%)
+/*clip: rect(0px,100%,25px,0px);*/
+	}
 	.submenu__wrapper {
 		width: 100%;
 	    height: 100px;
@@ -549,6 +552,11 @@ iframe  { zoom: 1;  }
 	.panel__content-wrapper {
 		width: 100%;
 	}
+
+	.panel__wrapper video {
+	    width: 100%!important;
+	}
+
 	.owl-carousel .owl-stage-outer img {
     	margin-bottom: 0;
 	}

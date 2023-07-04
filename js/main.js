@@ -86,7 +86,7 @@ var tabindex = 2;
       $(this).owlCarousel({
         items: 1,
         nav: true,
-        loop: false,
+        loop: true,
         center: true,
         stagePadding: 0
       });
@@ -97,8 +97,8 @@ var tabindex = 2;
         loop: false,
         center: true,
         stagePadding: 0,
-        URLhashListener:true,
-        autoplayHoverPause:false,
+        URLhashListener: true,
+        autoplayHoverPause: false,
         startPosition: 'URLHash'
       });
     }
@@ -146,6 +146,16 @@ var tabindex = 2;
     });
 
   });
+
+  const owl = $('.owl-carousel');
+  owl.on('changed.owl.carousel', function(event) {
+    if ($('.submenu__wrapper').is(":visible")){
+      $('.panel__wrapper, .pointer__wrapper').hide();
+      $('.menu__wrapper a').removeClass('selected').eq(event.page.index).addClass('selected');
+      $('.menu__wrapper a').eq(event.page.index).trigger( "click" );
+    }
+  })
+
 
 // controls thumbnail layer:
   $('.submenu__wrapper').on('click','.submenu__item',function() {
