@@ -1,8 +1,4 @@
 $(document).on('ready', function() {
-  //var config = "js/config.js";
-  //var config = require('js/config.js');
-  //let config = $.getScript(url);
-  //let config = $.getJSON("js/config.json");
 $.getJSON("js/config.json", function(json) {
 // console.log(json[0]); // show the info it in firebug console
 // alert(json.length)
@@ -25,7 +21,7 @@ var tabindex = 2;
                     //$('.submenu__wrapper').append('<div style="font-size:14px;text-indent:10px;">'+itemkey+'</div>');
                     //$('[data-title="'+sectionkey+'"]').append('<div>'+itemkey+'</div>');
                     let title = json[key][sectionkey][itemkey].title;
-                    //console.log('[data-title="' + sectionkey + '"]')
+                    
                     // sets the submenu icon rows:
                     $('[data-hash="' + sectionkey + '"] .submenu__elements').append('<button class="submenu__item" data-title="' + title + '"><img src="' + json[key][sectionkey][itemkey].icon + '" alt="icon" /></button>');
 
@@ -83,12 +79,12 @@ var tabindex = 2;
   $('.owl-carousel').each(function() {
     let $this = $(this);
     if ($this.hasClass('imagelayer')) {
-      $(this).owlCarousel({
-        items: 1,
-        nav: true,
-        loop: true,
-        center: true,
-        stagePadding: 0
+      $(this).owlCarousel({ 
+        items: 1, 
+        nav: !0, 
+        rewind: !0, 
+        animateOut: "fadeOut", 
+        stagePadding: 0 
       });
     } else {
       $(this).owlCarousel({

@@ -23,7 +23,6 @@
   <link rel="stylesheet" type="text/css" href="css/owl.carousel.min.css">
   <link rel="stylesheet" type="text/css" href="css/first.min.css">
 
-
   <link rel="icon" type="image/png" href="images/favicon.png" />
 
   <script type="text/javascript" src="js/jquery-2.2.0.min.js"></script>
@@ -42,9 +41,9 @@
   <div class="content__wrapper">
 
       <div class="menu__wrapper"></div>
-
-      <img class="menu_shadow" src="images/interface/strip.png" />
-
+      <div class="menu_shadow">
+        <img src="images/interface/strip.png" />
+      </div>
 
       <div class="submenu__wrapper">
         <div class="submenu__scroller owl-carousel"></div>

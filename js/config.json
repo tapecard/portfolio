@@ -5,9 +5,9 @@
 			"icon" : "images/icons/freakflags.jpg",
 			"image": "images/content/freakflags.jpg",
 			"title": "Freak Flags",
-			"alt": "screenshot of Freak Flags website",
+			"alt"  : "screenshot of Freak Flags website",
 			"date" : "2020",
-			"body" : "This one-of-a-kind website has several unique functions and produces a best of class flag sprite.",
+			"body" : "This one-of-a-kind website has several unique functions and produces a best-of-class flag sprite using insightful file compression techniques.",
 			"url"  : "https://www.freakflagsprite.com"
 			},
 		"Baltimore Ski Club":{
@@ -15,7 +15,7 @@
 			"icon" : "images/icons/BSC.jpg",
 			"image": "images/content/BSC.jpg",
 			"title": "Baltimore Ski Club",
-			"alt": "screenshot of ski club website",
+			"alt"  : "screenshot of ski club website",
 			"date" : "2018",
 			"body" : "The website of the Baltimore Ski Club. This site is the portal for membership and events. It is regularly updated with current trip information. Developed in Word Press, the site accepts payments for membership and maintains the scheduling for trips, activities, and meetings.",
 			"url"  : "https://www.baltimoreskiclub.org"
@@ -62,7 +62,7 @@
 			"icon" : "images/icons/beachpath.png",
 			"image": "images/content/beachpath.jpg",
 			"title": "Beach Path",
-			"alt": "Charcoal drawing of the path through the trees.",
+			"alt": "Charcoal drawing of the path through the trees to the beach.",
 			"date" : "2021",
 			"body" : "Charcoal and Guash on Paper",
 			"url"  : "",
@@ -92,10 +92,43 @@
 				],
 			"title": "Beach Day #3",
 			"date" : "2022",
-			"body" : "Charcoal and Guash on Paper",
+			"body" : "Charcoal and guash on paper, watercolor on paper series",
 			"url"  : "",
-			"width" : "350"
+			"width" : "425"
 			},
+		"Shield":{
+			"type" : "fineart",
+			"icon" : "images/icons/shield.jpg",
+			"image": [
+				"images/content/shield1.jpg",
+				"images/content/shield2.jpg"
+				],
+			"alt": [
+				"Plexyglass convex mirror backlit with LED lighting showing through etchings and around the edge.",
+				"Plexyglass convex mirror backlit with LED lighting showing through etchings and around the edge."
+				],
+			"title": "Shield",
+			"date" : "2002",
+			"body" : "Wall hanging using a plexiglass convex mirror with designs etched into the bcking. Backlit with the light of coiled LED strips showing through and around.",
+			"url"  : "",
+			"width" : "425"
+			},
+		"Steel Pulse Poster":{
+			"type" : "commart",
+			"icon" : "images/icons/steelpulse.png",
+			"image": "images/content/steelpulse.png",
+			"title": "Steel Pulse Poster",
+			"alt"  : "Illustration of a sun and beach with the bands logo",
+			"date" : "2008",
+			"body" : "Concert Poster for Steel Pulse Show at Doce Lunas Resort. Adobe Photoshop",
+			"url"  : "",
+			"width" : "300"
+			}
+		},
+		"iconimage":"../images/interface/interactive0.png"
+	},
+	{
+	"The_Other":{
 		"Ceceom Today Cover":{
 			"type" : "commart",
 			"icon" : "images/icons/cecomToday.png",
@@ -113,22 +146,6 @@
 			"url"  : "",
 			"width" : "300"
 			},
-		"Steel Pulse Poster":{
-			"type" : "commart",
-			"icon" : "images/icons/steelpulse.png",
-			"image": "images/content/steelpulse.png",
-			"title": "Steel Pulse Poster",
-			"alt": "Illustration of a sun and beach with the bands logo",
-			"date" : "2008",
-			"body" : "Concert Poster for Steel Pulse Show at Doce Lunas Resort. Adobe Photoshop",
-			"url"  : "",
-			"width" : "300"
-			}
-		},
-		"iconimage":"../images/interface/interactive0.png"
-	},
-	{
-	"The_Other":{
 		"Earth Day Display":{
 			"type" : "video",
 			"icon" : "images/icons/eday2.png",
