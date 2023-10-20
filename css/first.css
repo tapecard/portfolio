@@ -493,7 +493,8 @@ h1 a:focus {
         box-sizing: border-box;
     }
     .panel__content-wrapper {
-        width: 100%;
+        width: calc(100% - 20px);
+        margin: 0 auto;
     }
     .panel__wrapper img,
     .panel__wrapper video {

@@ -7,9 +7,9 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>MIke Cohens Tapecards</title>
+  <title>Mike Cohens Tapecards</title>
   
-  <meta description="MIke Cohens Tapecards">
+  <meta description="Mike Cohen's Tapecards">
   <meta name="author" content="PixelBitch">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 

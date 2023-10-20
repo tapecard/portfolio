@@ -149,13 +149,17 @@
 		"Earth Day Display":{
 			"type" : "video",
 			"icon" : "images/icons/eday2.png",
-			"image": "images/content/eday2180x320.mov",
+			"image": [
+				"images/content/eday2180x320.mov",
+				"images/content/eday1180x320.mov",
+				"images/content/eday3180x320.mov"
+				],
 			"title": "Earth Day Display",
 			"date" : "2008",
-			"body" : "Earth Day Poster Winner Animation running between segments on displays at the Pentagon. The project was to take existing earth day posters and create 10 second spots to promote the Army Earth Day Initiative. These Would rotate in with other content throughout the day. Developed in Final Cut Pro. ",
+			"body" : "3 Earth Day Poster Winners Animations running between segments on displays at the Pentagon. The project was to take existing earth day posters and create 10 second spots to promote the Army Earth Day Initiative. These Would rotate in with other content throughout the day. Developed in Final Cut Pro.",
 			"runtime"  : "00:10",
-			"width" : "180",
-			"posterframe" : "images/content/edayposterframe.png"
+			"width" : "180"
+		
 			},
 		"E411 Intro":{
 			"type" : "video",

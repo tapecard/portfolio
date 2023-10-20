@@ -41,9 +41,24 @@ var tabindex = 2;
                       if ('posterframe' in json[key][sectionkey][itemkey]) {
                           posterframe = 'poster="' + json[key][sectionkey][itemkey].posterframe + '" ';
                       }
-                      $('.panel__collection').append(titleBarConstant + '<div class="panel__sidebar"><div class="panel__controls"><button class="panel__play">Play Video</button><!--<button class="panel__2x">2x</button>--!></div><div class="panel__body"><div class="panel__runtime">Runtime: ' + json[key][sectionkey][itemkey].runtime + '</div>' + json[key][sectionkey][itemkey].body + '</div></div><div class="panel__content-wrapper"><video style="width:' + json[key][sectionkey][itemkey].width + 'px" ' + posterframe + 'style="width:420px;height:315px;" controls="" preload="auto"><source src="' + json[key][sectionkey][itemkey].image + '" type="video/mp4">' +
-                        '</video></div></div>');
-                      
+                      let panelString = titleBarConstant + '<div class="panel__sidebar"><div class="panel__controls"><button class="panel__play">Play Video</button></div><div class="panel__body"><div class="panel__runtime">Runtime: ' + json[key][sectionkey][itemkey].runtime + '</div>' + json[key][sectionkey][itemkey].body + '</div></div><div class="panel__content-wrapper">';
+
+
+                        if (json[key][sectionkey][itemkey].image.constructor === Array) {
+                          let arraystring = '<div class="imagelayer owl-carousel">',
+                            endarraystring = '</div>';
+
+                            for ( elem in json[key][sectionkey][itemkey].image) {
+                            arraystring += '<video style="width:' + json[key][sectionkey][itemkey].width + 'px" ' + posterframe + 'style="width:'+json[key][sectionkey][itemkey].width+'px;height:315px;" controls="" preload="auto"><source src="' + json[key][sectionkey][itemkey].image[elem] + '" type="video/mp4"></video>';
+                            }
+                            $('.panel__collection').append( panelString + arraystring + endarraystring +'</div></div></div>');
+
+                          } else {
+                           
+                          $('.panel__collection').append(panelString+'<video style="width:' + json[key][sectionkey][itemkey].width + 'px" ' + posterframe + 'style="width:420px;height:315px;" controls="" preload="auto"><source src="' + json[key][sectionkey][itemkey].image + '" type="video/mp4"></video></div></div></div>');
+                          }
+
+
                     } else if (json[key][sectionkey][itemkey].type == 'website') {
                       
                       $('.panel__collection').append(titleBarConstant + '<div class="panel__body">' + json[key][sectionkey][itemkey].body + '<a href="' + json[key][sectionkey][itemkey].url + '" target="new">' + json[key][sectionkey][itemkey].url.replace("https://","") + '</a></div><div class="panel__content-wrapper"><a href="' + json[key][sectionkey][itemkey].url + '" target="new"><img class="panel__image" src="' + json[key][sectionkey][itemkey].image + '" style="width:' + json[key][sectionkey][itemkey].width + 'px" alt="' + json[key][sectionkey][itemkey].alt + '"/></a></div></div>');
@@ -232,8 +247,13 @@ var tabindex = 2;
 
 // video play/pause button control:
   $(document).on('click','.panel__controls button:first-child', function() {
-    let $this = $(this),
-        movie = $this.closest('.panel__wrapper').find('video')[0];
+    let $this = $(this);
+      if ($this.closest('.panel__wrapper').find('.active').length) {
+        var movie = $this.closest('.panel__wrapper').find('.owl-item.active video')[0];
+      } else {
+        var movie = $this.closest('.panel__wrapper').find('video')[0];
+      }
+     
     if ($this.text().indexOf("Pause Video")!= -1) {
       movie.pause();
       $this.attr("class","panel__play").html("Play Video");
@@ -247,7 +267,7 @@ var tabindex = 2;
   t = window.setInterval(function() { 
     $('video').each(function(){
       let $this = $(this);
-      let $thisControl = $this.closest('.panel__wrapper').find('.panel__controls button:first-child');
+      let $thisControl = $this.closest('.panel__wrapper:has .active').find('.panel__controls button:first-child');
       if ($this[0].paused == true || $this[0].ended == true) {
         $thisControl.attr("class","panel__play").html("Play Video");
       } else {
