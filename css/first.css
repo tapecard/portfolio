@@ -383,17 +383,22 @@ h1 a:focus {
     position: absolute;
     width: auto;
     z-index: -1;
-    display: none;
 }
 .background__one {
     margin-left: 50%;
     left: -365px;
     top: -40px;
+    width: auto;
+    position: absolute;
+    display: none;
 }
 .background__two {
     margin-left: 50%;
     left: -600px;
     top: -24px;
+    width: auto;
+    position: absolute;
+    display: none;
 }
 .background__three {
     position: absolute;
@@ -505,5 +510,33 @@ h1 a:focus {
     }
     .owl-carousel .owl-item img {
         width: auto;
+    }
+    .background__one img,
+    .background__two img {
+        display: none;
+    }
+    .background__one {
+        margin-left: 0;
+        left: 0;
+        top: -40px;
+        width: 100%;
+        background-image: url(../images/interface/bg02a.png);
+        height: 100vh;
+        transform: translate(0%, 0);
+        background-position: center top;
+        z-index: -1;
+        background-repeat: no-repeat;
+    }
+    .background__two {
+        margin-left: 0;
+        left: 0;
+        top: -24px;
+        width: 100%;
+        height: 100vh;
+        transform: translate(0%, 0);
+        background-position: center top;
+        background-image: url('../images/interface/bg03a.png');
+        z-index: -1;
+        background-repeat: no-repeat;
     }
 }

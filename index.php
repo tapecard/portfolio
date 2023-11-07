@@ -58,8 +58,8 @@
       <div class="panel__collection"></div>
 
       <div class="background__collection">
-        <img class="background__one" src="images/interface/bg02a.png">
-        <img class="background__two" src="images/interface/bg03a.png">
+        <div class="background__one"><img src="images/interface/bg02a.png"></div>
+        <div class="background__two"><img src="images/interface/bg03a.png"></div>
         <div class="background__three"></div>
       </div>
 
