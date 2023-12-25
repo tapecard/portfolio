@@ -1,5 +1,5 @@
 body {
-    background-image: url(../images/interface/baseTexture.png);
+/*    background-image: url(../images/interface/baseTexture.png);*/
     color: #1d1d1d;
     font-family: arial, helvetica, sans-serif;
     margin-bottom: 20px;
@@ -13,7 +13,7 @@ h1 {
     margin: 0 auto;
     width: 100%;
     text-align: center;
-    background: url(../images/interface/stripUppera.png) center bottom no-repeat;
+/*    background: url(../images/interface/stripUppera.png) center bottom no-repeat;*/
     height: 25px;
     line-height: 1.75;
     font-size: 12px;
@@ -223,9 +223,9 @@ h1 a:focus {
     line-height: 1;
     display: block;
     vertical-align: bottom;
-    box-shadow: 15px 20px 20px rgba(0, 0, 0, 0.3);
+/*    box-shadow: 15px 20px 20px rgba(0, 0, 0, 0.3);*/
 }
-.panel__title:before {
+/*.panel__title:before {
     content: "";
     position: absolute;
     left: -52px;
@@ -242,7 +242,7 @@ h1 a:focus {
     width: 52px;
     height: 100%;
     background: linear-gradient(90deg, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0) 100%);
-}
+}*/
 .panel__title span {
     vertical-align: text-bottom;
 }
@@ -276,7 +276,7 @@ h1 a:focus {
     text-align: left;
     cursor: pointer;
     border-radius: 14px;
-    box-shadow: 15px 20px 20px rgba(0, 0, 0, 0.3);
+/*    box-shadow: 15px 20px 20px rgba(0, 0, 0, 0.3);*/
     background-color: #fff;
 }
 .panel__sidebar {
@@ -294,7 +294,7 @@ h1 a:focus {
 .panel__pause:focus,
 .panel__play:focus {
     border: 1px solid #888 !important;
-    box-shadow: 15px 20px 20px rgba(0, 0, 0, 0.3), 0 0 10px inset rgba(255, 255, 255, 0.5);
+/*    box-shadow: 15px 20px 20px rgba(0, 0, 0, 0.3), 0 0 10px inset rgba(255, 255, 255, 0.5);*/
 }
 .panel__wrapper .owl-item {
     opacity: 0;
@@ -362,7 +362,7 @@ h1 a:focus {
 .panel__wrapper video,
 .website .panel__content-wrapper {
     z-index: 2;
-    box-shadow: 15px 20px 20px rgba(0, 0, 0, 0.3);
+/*    box-shadow: 15px 20px 20px rgba(0, 0, 0, 0.3);*/
 }
 .panel__content-wrapper {
     z-index: 2;
@@ -379,7 +379,12 @@ h1 a:focus {
     transform-style: preserve-3d;
     transition: transform 1s;
 }
-.background__collection img {
+
+.background__collection {
+    display: none;
+}
+/*.background__collection img {
+    
     position: absolute;
     width: auto;
     z-index: -1;
@@ -401,8 +406,8 @@ h1 a:focus {
     position: absolute;
     display: none;
     z-index: -1;
-}
-.background__three {
+}*/
+/*.background__three {
     position: absolute;
     z-index: -1;
     display: none;
@@ -412,7 +417,7 @@ h1 a:focus {
     bottom: 0;
     background-image: url(../images/interface/bg04.png);
     background-repeat: repeat-x;
-}
+}*/
 .footer {
     position: fixed;
     bottom: 0;
@@ -513,11 +518,11 @@ h1 a:focus {
     .owl-carousel .owl-item img {
         width: auto;
     }
-    .background__one img,
+    /*.background__one img,
     .background__two img {
         display: none;
-    }
-    .background__one {
+    }*/
+    /*.background__one {
         margin-left: 0;
         left: 0;
         top: -40px;
@@ -540,5 +545,5 @@ h1 a:focus {
         background-image: url('../images/interface/bg03a.png');
         z-index: -1;
         background-repeat: no-repeat;
-    }
+    }*/
 }

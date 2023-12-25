@@ -222,28 +222,28 @@ var tabindex = 2;
   });
 
 // tracks clicks for backgrounds: 
-  let clicks = 0;
+  // let clicks = 0;
 
-  $(document).on('click', 'body', function(){
-      clicks++;
-      if (clicks == 5) {
-        $('.background__three').fadeOut();
-        $('.background__one').fadeIn(12000);
-      }
-      if (clicks == 10) {
-        $('.background__one').fadeOut(12000);
-        $('.background__two').fadeIn(12000);
-      }
-      if (clicks == 15) {
-        $('.background__two').fadeOut(12000);
-        $('.background__three').fadeIn(12000);
-      }
-      if (clicks == 20) {
-        $('.background__three').fadeOut(12000);
-        $('.background__one').fadeIn(12000);
-        clicks = 6;
-      }
-  });
+  // $(document).on('click', 'body', function(){
+  //     clicks++;
+  //     if (clicks == 5) {
+  //       $('.background__three').fadeOut();
+  //       $('.background__one').fadeIn(12000);
+  //     }
+  //     if (clicks == 10) {
+  //       $('.background__one').fadeOut(12000);
+  //       $('.background__two').fadeIn(12000);
+  //     }
+  //     if (clicks == 15) {
+  //       $('.background__two').fadeOut(12000);
+  //       $('.background__three').fadeIn(12000);
+  //     }
+  //     if (clicks == 20) {
+  //       $('.background__three').fadeOut(12000);
+  //       $('.background__one').fadeIn(12000);
+  //       clicks = 6;
+  //     }
+  // });
 
 // video play/pause button control:
   $(document).on('click','.panel__controls button:first-child', function() {
