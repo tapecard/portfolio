@@ -23,7 +23,7 @@ var tabindex = 2;
                     let title = json[key][sectionkey][itemkey].title;
                     
                     // sets the submenu icon rows:
-                    $('[data-hash="' + sectionkey + '"] .submenu__elements').append('<button class="submenu__item" data-title="' + title + '"><img src="' + json[key][sectionkey][itemkey].icon + '" alt="icon" /></button>');
+                    $('[data-hash="' + sectionkey + '"] .submenu__elements').append('<button class="submenu__item" data-title="' + title + '"><img src="' + json[key][sectionkey][itemkey].icon + '" alt="'+ title +' icon" /></button>');
 
 
                     // sets the content:

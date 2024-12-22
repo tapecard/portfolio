@@ -1,10 +1,20 @@
 [ {
-	"This":{
+	"Web":{
+		"XenoGrotto":{
+			"type" : "website",
+			"icon" : "images/icons/xenogrotto.png",
+			"image": "images/content/xenogrotto.jpg",
+			"title": "XenoGrotto Website",
+			"alt"  : "screenshot of XenoGrotto website",
+			"date" : "2024",
+			"body" : "This e-commerce website has a mobile focus and was developed on the Shopify platform. The interface was built using customized sections. Product graphics are all original work.",
+			"url"  : "https://www.xenogrotto.com"
+			},
 		"Freak Flags":{
 			"type" : "website",
 			"icon" : "images/icons/freakflags.jpg",
 			"image": "images/content/freakflags.jpg",
-			"title": "Freak Flags",
+			"title": "Freak Flags website",
 			"alt"  : "screenshot of Freak Flags website",
 			"date" : "2020",
 			"body" : "This one-of-a-kind website has several unique functions and produces a best-of-class flag sprite using insightful file compression techniques.",
@@ -14,7 +24,7 @@
 			"type" : "website",
 			"icon" : "images/icons/BSC.jpg",
 			"image": "images/content/BSC.jpg",
-			"title": "Baltimore Ski Club",
+			"title": "Baltimore Ski Club website",
 			"alt"  : "screenshot of ski club website",
 			"date" : "2018",
 			"body" : "The website of the Baltimore Ski Club. This site is the portal for membership and events. It is regularly updated with current trip information. Developed in Word Press, the site accepts payments for membership and maintains the scheduling for trips, activities, and meetings.",
@@ -28,35 +38,25 @@
 			"date" : "2011",
 			"body" : "Skeet sheet is a web app for storing and analizing skeet score data. A multi-part project requiring PHP, MySQL, CSS, and Javascript. It features an innovative user controlled picklist in a space saving layout designed for handhelds. Users can track scores round by round on a handheld device, then upload the scores for later analysis in the desktop module.",
 			"width" : "425",
-			"url"  : "http://www.skeetsheet.net",
+			"url"  : "",
 			"alt": "screenshot of Skeet Sheet website"
 			},
 		"Locator App":{
 			"type" : "video",
 			"icon" : "images/icons/loc.png",
 			"image": "images/content/loc640x480.mov",
-			"title": "USAEC Locator",
+			"title": "USAEC Locator App",
 			"date" : "2004",
 			"body" : "This database front end used Flash and Director to create an interactive map with contact information, office location, ID photo, and equipment assignments.",
 			"runtime"  : "01:04",
 			"width" : "425",
 			"posterframe"  : "images/content/loc.png"
-			},
-		"NEPA Desktop Reference":{
-			"type" : "video",
-			"icon" : "images/icons/ndr.png",
-			"image": "images/content/ndr640x480.mov",
-			"title": "NEPA Desktop Reference",
-			"date" : "2006",
-			"body" : "A searchable database of PDF files. This tool was developed with Director and Flash With a PDF Xtra to search and display a collection of NEPA related documents. This tool is a valuable asset to NEPA Precticioners in referencing the many detailed documents pertaining to their task.",
-			"runtime"  : "01:08",
-			"width" : "425"
 			}
 		},
 		"iconimage":"../images/interface/design0.png"
 	},
 	{
-	"That":{
+	"Arts":{
 		"Beach Path":{
 			"type" : "fineart",
 			"icon" : "images/icons/beachpath.png",
@@ -128,7 +128,7 @@
 		"iconimage":"../images/interface/interactive0.png"
 	},
 	{
-	"The_Other":{
+	"More":{
 		"Ceceom Today Cover":{
 			"type" : "commart",
 			"icon" : "images/icons/cecomToday.png",
