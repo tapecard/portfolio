@@ -1,0 +1,201 @@
+[ {
+	"Web":{
+		"XenoGrotto":{
+			"type" : "website",
+			"icon" : "images/icons/xenogrotto.png",
+			"image": "images/content/xenogrotto.jpg",
+			"title": "XenoGrotto Website",
+			"alt"  : "screenshot of XenoGrotto website",
+			"date" : "2024",
+			"body" : "This e-commerce website has a mobile focus and was developed on the Shopify platform. The interface was built using customized sections. Product graphics are all original work.",
+			"url"  : "https://www.xenogrotto.com"
+			},
+		"Freak Flags":{
+			"type" : "website",
+			"icon" : "images/icons/freakflags.jpg",
+			"image": "images/content/freakflags.jpg",
+			"title": "Freak Flags website",
+			"alt"  : "screenshot of Freak Flags website",
+			"date" : "2020",
+			"body" : "This one-of-a-kind website has several unique functions and produces a best-of-class flag sprite using insightful file compression techniques.",
+			"url"  : "https://www.freakflagsprite.com"
+			},
+		"Baltimore Ski Club":{
+			"type" : "website",
+			"icon" : "images/icons/BSC.jpg",
+			"image": "images/content/BSC.jpg",
+			"title": "Baltimore Ski Club website",
+			"alt"  : "screenshot of ski club website",
+			"date" : "2018",
+			"body" : "The website of the Baltimore Ski Club. This site is the portal for membership and events. It is regularly updated with current trip information. Developed in Word Press, the site accepts payments for membership and maintains the scheduling for trips, activities, and meetings.",
+			"url"  : "https://www.baltimoreskiclub.org"
+			},
+		"Skeet Sheet":{
+			"type" : "website",
+			"icon" : "images/icons/skeetsheet.png",
+			"image": "images/content/skeetsheet-d.jpg",
+			"title": "Skeetsheet",
+			"date" : "2011",
+			"body" : "Skeet sheet is a web app for storing and analizing skeet score data. A multi-part project requiring PHP, MySQL, CSS, and Javascript. It features an innovative user controlled picklist in a space saving layout designed for handhelds. Users can track scores round by round on a handheld device, then upload the scores for later analysis in the desktop module.",
+			"width" : "425",
+			"url"  : "",
+			"alt": "screenshot of Skeet Sheet website"
+			},
+		"Locator App":{
+			"type" : "video",
+			"icon" : "images/icons/loc.png",
+			"image": "images/content/loc640x480.mov",
+			"title": "USAEC Locator App",
+			"date" : "2004",
+			"body" : "This database front end used Flash and Director to create an interactive map with contact information, office location, ID photo, and equipment assignments.",
+			"runtime"  : "01:04",
+			"width" : "425",
+			"posterframe"  : "images/content/loc.png"
+			}
+		},
+		"iconimage":"../images/interface/design0.png"
+	},
+	{
+	"Arts":{
+		"Beach Path":{
+			"type" : "fineart",
+			"icon" : "images/icons/beachpath.png",
+			"image": "images/content/beachpath.jpg",
+			"title": "Beach Path",
+			"alt": "Charcoal drawing of the path through the trees to the beach.",
+			"date" : "2021",
+			"body" : "Charcoal and Guash on Paper",
+			"url"  : "",
+			"width" : "300"
+			},
+		"Anvil Mountain Forge Logo": {
+			"type" : "commart",
+			"icon" : "images/icons/AMF.png",
+			"image": "images/content/AMF.png",
+			"alt": "black and white illustration of a Monumental forge",
+			"title": "Anvil Mountain Forge Logo",
+			"date" : "2021",
+			"body" : "Anvil Mountain Logo. Adobe Illustrator",
+			"url"  : "",
+			"width" : "250"
+			},
+		"Beach Day #3":{
+			"type" : "fineart",
+			"icon" : "images/icons/beachday.png",
+			"image": [
+				"images/content/BeachDayDrawing3.jpg",
+				"images/content/BeachDayPainting3.png"
+				],
+			"alt": [
+				"Realistic charcoal drawing of 3 beach umbrellas",
+				"Abstract water color painting of 3 beach umbrellas"
+				],
+			"title": "Beach Day #3",
+			"date" : "2022",
+			"body" : "Charcoal and guash on paper, watercolor on paper series",
+			"url"  : "",
+			"width" : "425"
+			},
+		"Shield":{
+			"type" : "fineart",
+			"icon" : "images/icons/shield.jpg",
+			"image": [
+				"images/content/shield1.jpg",
+				"images/content/shield2.jpg"
+				],
+			"alt": [
+				"Plexyglass convex mirror backlit with LED lighting showing through etchings and around the edge.",
+				"Plexyglass convex mirror backlit with LED lighting showing through etchings and around the edge."
+				],
+			"title": "Shield",
+			"date" : "2002",
+			"body" : "Wall hanging using a plexiglass convex mirror with designs etched into the bcking. Backlit with the light of coiled LED strips showing through and around.",
+			"url"  : "",
+			"width" : "425"
+			},
+		"Steel Pulse Poster":{
+			"type" : "commart",
+			"icon" : "images/icons/steelpulse.png",
+			"image": "images/content/steelpulse.png",
+			"title": "Steel Pulse Poster",
+			"alt"  : "Illustration of a sun and beach with the bands logo",
+			"date" : "2008",
+			"body" : "Concert Poster for Steel Pulse Show at Doce Lunas Resort. Adobe Photoshop",
+			"url"  : "",
+			"width" : "300"
+			}
+		},
+		"iconimage":"../images/interface/interactive0.png"
+	},
+	{
+	"More":{
+		"Ceceom Today Cover":{
+			"type" : "commart",
+			"icon" : "images/icons/cecomToday.png",
+			"image": [
+				"images/content/cecomToday.png",
+				"images/content/cecomTodaycover.jpg"
+				],
+			"alt": [
+				"Cover Art combining soldiers face with a QR code",
+				"Published Cover Art combining after some hack edited it for publication"
+				],
+			"title": "Ceceom Today Cover Illustration",
+			"date" : "2012",
+			"body" : "Illustration for the spring 2012 CECOM Today Magazine Cover, Developed in Photoshop.",
+			"url"  : "",
+			"width" : "300"
+			},
+		"Earth Day Display":{
+			"type" : "video",
+			"icon" : "images/icons/eday2.png",
+			"image": [
+				"images/content/eday2180x320.mov",
+				"images/content/eday1180x320.mov",
+				"images/content/eday3180x320.mov"
+				],
+			"title": "Earth Day Display",
+			"date" : "2008",
+			"body" : "3 Earth Day Poster Winners Animations running between segments on displays at the Pentagon. The project was to take existing earth day posters and create 10 second spots to promote the Army Earth Day Initiative. These Would rotate in with other content throughout the day. Developed in Final Cut Pro.",
+			"runtime"  : "00:10",
+			"width" : "180"
+		
+			},
+		"E411 Intro":{
+			"type" : "video",
+			"icon" : "images/icons/e411.png",
+			"image": "images/content/e411intro320x240.mp4",
+			"title": "E411 Intro.",
+			"date" : "2008",
+			"body" : "E411 Introduction for environmental outreach spots on youtube, Developed in Final Cut Pro.",
+			"runtime"  : "00:10",
+			"width" : "425",
+			"posterframe" : "images/content/e411poster.jpg"
+			},
+		"USAEC SRTV Bumper":{
+			"type" : "video",
+			"icon" : "images/icons/nlogo.png",
+			"image": "images/content/nlogo640x480.mov",
+			"title": "USAEC SRTV Bumper",
+			"date" : "2004",
+			"width" : "425",
+			"runtime": "00:06",
+			"posterframe" : "images/content/nlogo.jpg",
+			"body" : "Animated Logo U.S. Army Environmental Command. Developed in Adobe After Effects.",
+			"url"  : ""
+			},
+		"USAEC Software Training":{
+			"type" : "video",
+			"icon" : "images/icons/training.png",
+			"image": "images/content/training640x480.mov",
+			"title": "USAEC Software Training",
+			"date" : "2007",
+			"runtime": "03:30",
+			"width": "400",
+			"posterframe" : "images/content/training.jpg",
+			"body" : "A video outlining the benefits of the USAEC software training program for environmental professionals who need to interface with USAEC Software."
+			}
+		},
+		"iconimage":"../images/interface/websites0.png"
+	}
+]
