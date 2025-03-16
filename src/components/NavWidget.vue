@@ -15,7 +15,7 @@
       </button>
       <button class="nav__buttons" 
         v-for="(blob, i) in this.dataStore" 
-        v-bind:key="i" 
+        :key="i" 
         @click="selectArea(i+1)">
         <div class="nav__buttons-main">{{ this.dataStore[i].section }}</div>
         <div class="nav__buttons-sub">{{ this.dataStore[i].section_subtitle }}</div>
@@ -35,36 +35,28 @@ export default {
   data() { 
     return {
       navOpen: false,
-      d: document,
+      d: document
     }
   },
   methods: {
     toggleDrawer() {
       this.navOpen = !this.navOpen;
-      if (this.navOpen) {
-        this.d.body.style.overflow = "hidden"
-      } else {
-        this.d.body.style.overflow = "initial";
-      }
     },
     selectArea(index) {
       let navtree = this.d.getElementsByClassName('nav__buttons');
       let elems = this.d.getElementsByClassName('currentOne');
       let el = this.d.getElementById("area" + index);
+      // this.d.body.style.backgroundColor = this.dataStore[index].section_color;
       
       elems[0].classList.remove('currentOne');
       el.classList.add('currentOne');
 
-      for (let i=0; i<navtree.length; i++) {
-        navtree[i].removeAttribute('disabled');
+      for (let element of navtree) {
+        element.removeAttribute('disabled');
       }
       navtree[index].setAttribute('disabled', 'disabled');
-
       this.navOpen = false;
-      this.d.body.style.overflow = "initial";
-
     }
-
   }
 }
 </script>
@@ -166,7 +158,7 @@ export default {
     }
     .nav__out {
       width: 100vw;
-      height:  calc(100vh - 80px);;
+      height:  calc(100vh - 80px);
       position: absolute;
       top: 0;
       z-index: -1;

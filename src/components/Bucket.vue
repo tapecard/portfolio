@@ -1,10 +1,10 @@
 
 <template>
-    <button class="area__bucket">
+    <button @click="startModal(this.projectData)" class="area__bucket">
       <h3 class="area__content">{{ this.projectData.title }}</h3>
       <span>
-        <img class="area__icon" :src="getAssetUrl()" />
-        {{ this.projectData.body }}
+        <img class="area__icon" :src="getIconUrl()" />
+        <p v-html="this.projectData.body"></p>
       </span>
     </button>
 </template>
@@ -15,8 +15,12 @@ export default {
   name: 'Bucket',
   props: ['projectData'],
   methods: {
-    getAssetUrl: function() {
+    getIconUrl: function() {
      return 'src/assets/icons/' + this.projectData.icon;
+    },
+    startModal: function(projectData) {
+      document.querySelector("dialog").showModal();
+      this.$emit('dialogData', this.projectData);
     }
   }
 }

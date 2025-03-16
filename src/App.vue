@@ -1,15 +1,17 @@
 <script setup>
 import { RouterLink, RouterView } from 'vue-router'
-import NavWidget from './components/NavWidget.vue'
-import Bucket from './components/Bucket.vue'
-
+import NavWidget from './components/NavWidget.vue';
+import Bucket from './components/Bucket.vue';
+import Dialog from './components/Dialog.vue';
 import data_store from './assets/data_store.js';
+
 </script>
 
 <template>
   <header>
     <div class="headline">
-
+    <div style="max-width:1280px;margin:0 auto;position:relative;">
+      
       <NavWidget :dataStore="data_store" />
 
       <h1 class="headline__name">{{ header }}</h1>
@@ -22,27 +24,32 @@ import data_store from './assets/data_store.js';
           mike.cohen@tapecard.com
         </a>
       </div>
-
+    </div>
     </div>
   </header>
 
-  <div id="stage">
+  <Dialog :inputData="this.inputData" />
 
+  <div id="stage">
     <div id="area0" class="currentOne">
       <h2 class="area__name">Palace of Wonders</h2>
-      <div class="area__motto">"The Situation Is In Charge"</div>
-      <img class="home__image" src="@/assets/Hero_640x350_sig_dream.jpg" style="width:90%" alt="House Ullr logo" />
+      <div class="area__wisdom">"The Situation Is In Charge"</div>
+      <img class="home__image" src="@/assets/Hero_640x350_sig_dream.jpg" style="width:90%" alt="Dream of the mollusk" />
     </div>
 
     <div v-for="(item, i) in data_store" 
-      v-bind:key="i" 
+      :key="i" 
       :id="'area'+(i+1)">
       <h2 class="area__name">{{ data_store[i].section }}</h2>
-      <div class="area__motto">{{ data_store[i].section_motto }}</div>
+      <div class="area__wisdom">{{ data_store[i].section_wisdom }}</div>
+      
+      <!-- Content Buckets -->
       <Bucket 
-        v-for="(project, i) in data_store[i].projects" 
-        v-bind:key="i" 
-        :projectData="project" />
+        v-for="(project) in data_store[i].projects" 
+        :key="i" 
+        :projectData="project" 
+        @dialogData="this.setData($event)"
+        />
     </div>
 
   </div>
@@ -52,10 +59,21 @@ import data_store from './assets/data_store.js';
 <script>
 export default {
   name: 'App',
+  components: {
+    NavWidget,
+    Dialog,
+    Bucket
+  },
   data() { 
     return {
       data_store,
-      header: 'Michael P. Cohen'
+      header: 'Michael P. Cohen',
+      inputData: {}
+    }
+  },
+  methods: {
+    setData(data) {
+      this.inputData = data;
     }
   }
 }
@@ -63,6 +81,9 @@ export default {
 
 
 <style scoped>
+/*  body {
+    overflow: hidden;
+  }*/
 .headline {
   width: 100%;
   background-image: linear-gradient(0deg, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 90%);
@@ -107,9 +128,6 @@ export default {
   color: #1D1D1D;
   text-decoration: none;
 }
-.headline__description {
-  width: 100%;
-}
 .home__image {
   margin-top: 24px;
 }
@@ -130,7 +148,7 @@ export default {
   color: #fff;
   font-family: sans-serif;
 }
-#stage div.currentOne span {
+#stage .currentOne span {
   font-size: 14px;
   line-height: 1;
   top: 130px;
@@ -142,11 +160,13 @@ export default {
 }
 .area__name {
   font-size: 2rem;
-  text-align: left;
+  text-align: center;
   padding: 0 16px;
   font-weight: bold;
+  max-width: 1280px;
+  margin: 0 auto;
 }
-#stage div.area__motto {
+#stage .area__wisdom {
   text-align: right;
   transform: rotate(-90deg);
   position: absolute;
@@ -220,7 +240,7 @@ export default {
   left: 0;
   top: 0;
   width: 100vw;
-  height: 100vh;
+  height: inherit;
   padding-top: 90px;
   transform: rotate(0deg);
   transition: all .2s ease-in;
@@ -240,14 +260,12 @@ export default {
   position: relative;
   text-align: center;
   padding-top: 90px;
-  opacity: 0;
+  display: none;
   background-color: rgba(0, 0, 0, .15);
-  transition: opacity .25s ease-in;
 }
 #area0.currentOne {
   padding-top: 90px;
   z-index: 45;
-  opacity: 1;
-  transition: opacity .5s ease-in;
+  display: block;
 }
 </style>

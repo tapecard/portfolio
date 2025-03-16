@@ -2,7 +2,7 @@ const data = [
   {
     section:'Web Projects', 
     section_subtitle:'Web based developments.',
-    section_motto:'"Many Small Jobs, Every Job A Success"',
+    section_wisdom:'"Many Small Jobs, Every Job A Success"',
     section_color:'rgba(0, 0, 255, .15)',
     projects: [
       {
@@ -12,7 +12,8 @@ const data = [
         title: "XenoGrotto Website",
         alt  : "screenshot of XenoGrotto website",
         date : "2024",
-        body : "This e-commerce website has a mobile focus and was developed on the Shopify platform. The interface was built using customized sections. Product graphics are all original work.",
+        body : "This e-commerce website was developed with a mobile focus and was developed on the Shopify platform. Desktop menus were elimiated in favor of mobile simplicity for desktop views. The interface was built using customized blocks and sections. Product graphics are all original work.",
+        width: "",
         url  : "https://xenogrotto.com"
       },
       {
@@ -22,7 +23,8 @@ const data = [
         title: "Freak Flags Website",
         alt  : "screenshot of freakflags website",
         date : "2024",
-        body : "This one-of-a-kind website has several unique functions and produces a best-of-class flag sprite using insightful file compression techniques.",
+        body : "This One of a kind website is a handy tool for use by web developers. It has several unique functions and produces a best of class flag sprite using insightful file compression techniques. Sprites can be displayed in multiple sizes and have a choice of styles and effects.<br /><br />\"Best sprite gererator on the net\"",
+        width: "",
         url  : "https://freakflagsprite.com"
       },
       {
@@ -32,7 +34,8 @@ const data = [
         title: "Baltimore Ski Club Website",
         alt  : "screenshot of Baltimore Ski Club website",
         date : "2024",
-        body : "The website of the Baltimore Ski Club. This site is the portal for membership and events. It is regularly updated with current trip information. Developed in Word Press, the site accepts payments for membership and maintains the scheduling for trips, activities, and meetings.",
+        body : "The website of the Baltimore Ski Club.<p>This site is the portal for membership and events. It is regularly updated with current trip information. Developed in Word Press, the site accepts payments for membership and maintains the scheduling for trips, activities, and meetings.",
+        width: "",
         url  : "https://baltimoreskiclub.org"
       },
       {
@@ -43,6 +46,7 @@ const data = [
         alt  : "screenshot of Baltimore Ski Club website",
         date : "2011",
         body : "Skeet sheet is a web app for storing and analizing skeet score data. A multi-part project requiring PHP, MySQL, CSS, and Javascript. It features an innovative user controlled picklist in a space saving layout designed for handhelds. Users can track scores round by round on a handheld device, then upload the scores for later analysis in the desktop module.",
+        width: "",
         url  : ""
       },
       {
@@ -54,6 +58,7 @@ const data = [
         alt  : "screenshot of Baltimore Ski Club website",
         date : "2004",
         body : "A database front end using Flash and Director to create an interactive map with contact information, office location, ID photo, and equipment assignments.",
+        width: "400",
         url  : ""
       }
     ]
@@ -61,9 +66,43 @@ const data = [
   {
     section:'Commercial Work', 
     section_subtitle:'Commercial work from over the years.',
-    section_motto:'"Success is a Process"',
-    section_color:'rgba(255, 0, 0, .15)',
+    section_wisdom:'"Success is a Process"',
+    section_color:'rgba(2, 0, 0, .15)',
     projects: [
+      {
+        type : "garment",
+        icon : "lastChair.jpg",
+        image: [
+          "lastChairSweatshirt2.jpg",
+          "lastChairSweatshirt1.jpg"
+        ],
+        alt: [
+          "lastchair sweatshirt on model rear view",
+          "lastchair sweatshirt on model front view"
+        ],
+        title: "Last Chair Sweatshirt",
+        date : "2024",
+        body : "Last Chair Snowboard Sweatshirt design includes all-over printing on the front back and sleeves. An innovative design that hangs the chairlift around the wearers neck like a necklace, the image also reflects the hazy etherial conditions in the mountains.",
+        width: "400",
+        url  : ""
+      },
+      {
+        type : "garment",
+        icon : "birdsOfPeace.jpg",
+        image: [
+          "birdsOfPeace2.jpg",
+          "birdsOfPeace1.jpg"
+        ],
+        alt: [
+          "birds of peace womans t-shirt on model front view in pink.",
+          "birds of peace womans t-shirt on model front view in blue."
+        ],
+        title: "Birds of Peace T-shirt",
+        date : "2024",
+        body : "The Birds of peace T-shirt features an inspiring, eye catching design. Uses styled Opart techniques to give visual motion to the birds in flight.",
+        width: "400",
+        url  : ""
+      },
       {
         type : "commart",
         icon : "AMF.png",
@@ -71,7 +110,8 @@ const data = [
         alt  : "Black and white illustration of a Monumental forge",
         title: "Anvil Mountain Forge Logo",
         date : "2021",
-        body : "Anvil Mountain Logo. Adobe Illustrator",
+        body : "Done in Adobe Illustrator, this logo reaches for a comic-book-action style to convey monumentality.",
+        width: "400",
         url  : ""
       },
       {
@@ -82,6 +122,7 @@ const data = [
         alt  : "Illustration of a sun and beach with the bands logo",
         date : "2008",
         body : "Concert Poster for Steel Pulse Show at Doce Lunas Resort. Adobe Photoshop",
+        width: "300",
         url  : "",
       },
       {
@@ -89,8 +130,8 @@ const data = [
         type : "commart",
         icon : "cecomToday.png",
         image: [
-          "images/content/cecomToday.png",
-          "images/content/cecomTodaycover.jpg"
+          "cecomToday.png",
+          "cecomTodaycover.jpg"
         ],
         alt  : [
         "Cover Art combining soldiers face with a QR code",
@@ -99,6 +140,7 @@ const data = [
         posterframe : "training.jpg",
         date : "2012",
         body : "Illustration for the spring 2012 CECOM Today Magazine Cover, Developed in Photoshop.",
+        width: "300",
         url  : ""
       }
     ]
@@ -106,7 +148,7 @@ const data = [
   {
     section:'Fine Arts', 
     section_subtitle:'Purely Artistic Persuits',
-    section_motto:'"The Situation Is In Charge"',
+    section_wisdom:'"The Situation Is In Charge"',
     section_color:'rgba(148, 0, 211, .15)',
     projects: [
       {
@@ -116,17 +158,22 @@ const data = [
         title: "Beach Path",
         alt  : "Charcoal drawing of the path through the trees to the beach.",
         date : "2021",
-        body : "Charcoal and Guash on Paper",
+        body : "Charcoal and Guash on Paper. This path had an enchanted quality in the way the light and overgrowth formed the scene. I'm glad a captured something of it since the whole pathway was torn out and replaced the following year, it never regained its peacful otherworldly quality.",
+        width: "300",
         url  : ""
       },
       {
         type : "fineart",
         icon : "beachday.png",
-        image: "beachday.jpg",
+        image: [
+          "beachDayDrawing3.jpg",
+          "beachDayPainting3.png"
+        ],
         title: "Beach Day #3",
         alt  : "Charcoal drawing of the path through the trees to the beach.",
         date : "2021",
         body : "Charcoal and guash on paper, watercolor on paper series",
+        width: "400",
         url  : ""
       },
       {
@@ -142,7 +189,8 @@ const data = [
         ],
         title: "Shield",
         date : "2002",
-        body : "Wall hanging using a plexiglass convex mirror with designs etched into the bcking. Backlit with the light of coiled LED strips showing through and around.",
+        body : "Wall hanging using a plexiglass convex mirror with designs etched into the bcking. Backlit with the light of coiled LED strips showing through and around. A remote control changes the color.",
+        width: "300",
         url  : ""
       }
     ]
@@ -150,7 +198,7 @@ const data = [
   {
     section:'Motion Graphics', 
     section_subtitle:'Bumper animations from my multimedia days.',
-    section_motto:'"Measure Twice, Cut Once"',
+    section_wisdom:'"Measure Twice, Cut Once"',
     section_color:'rgba(12, 73, 0, .15)',
     projects: [
       {
@@ -161,15 +209,17 @@ const data = [
         title: "E411 Intro",
         date : "2008",
         body : "E411 Video Intro for environmental outreach spots on youtube, Developed in Final Cut Pro.",
+        width: "320",
         url  : ""
       },
       {
         type : "video",
         icon : "nlogo.png",
         image: "nlogo640x480.mov",
-        title: "USAEC SRTV Bumper",
+        title: "USAEC Closing Bumper",
         date : "2004",
-        body : "Animated Logo U.S. Army Environmental Command. Developed in Adobe After Effects.",
+        body : "Animated Logo U.S. Army Environmental Command. Developed in Adobe After Effects. Uses an alpha channel to show the transition into the USAEC logo at the end of a video.",
+        width: "400",
         url  : ""
       },
       {
@@ -181,8 +231,14 @@ const data = [
           "eday1180x320.mov",
           "eday3180x320.mov"
         ],
+        posterframe : [
+          "edayposterframe.png",
+          "edayposterframe.png",
+          "edayposterframe.png"
+        ],
         date : "2004",
-        body : "3 Earth Day Poster Winners Animations running between segments on displays at the Pentagon. The project was to take existing earth day posters and create 10 second spots to promote the Army Earth Day Initiative. These Would rotate in with other content throughout the day. Developed in Final Cut Pro.",
+        body : "3 Earth Day Posters winning animations running between other segments on displays at the Pentagon. The project was to take existing earth day posters and create 10 second spots to promote the Army Earth Day Initiative. These Would rotate in with other content throughout the day. Developed in Final Cut Pro.",
+        width: "240",
         url  : ""
       },
       {
@@ -193,16 +249,11 @@ const data = [
         posterframe : "training.jpg",
         date : "2007",
         body : "A video outlining the benefits of the USAEC software training program for environmental professionals who need to interface with USAEC Software.",
+        width: "300",
         url  : ""
+          }
+        ]
       }
-    ]
-  },
-  {
-    section:'Odds & Ends', 
-    section_subtitle:'Various odd Projects',
-    section_motto:'"Dress the Part you Play"',
-    section_color:'rgba(255, 0, 255, .15)',
-    projects: []
-  }
+  
 ];
 export default data;
