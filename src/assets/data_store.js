@@ -1,9 +1,29 @@
 const data = [
   {
-    section:'Web Projects', 
+    section:'Home', 
+    section_subtitle:'Gallery of Unique',
+    section_wisdom:'"The Situation is in Charge"',
+    section_description:'Welcome to my portfolio, it contains a wide variety of work from fine arts to web development, spanning mediums and years.',
+    section_color:'rgba(0, 0, 0, .2)',
+    projects: [
+      {
+        type : "Homepage",
+        icon : "",
+        image: "Hero_dream.jpg",
+        title: "Home",
+        alt  : "screenshot of XenoGrotto website",
+        date : "2025",
+        body : "This e-commerce website was developed with a mobile focus and was developed on the Shopify platform. Desktop layouts were elimiated in favor of mobile simplicity for desktop views. The interface was built using customized blocks and sections. Product graphics are all original work.",
+        width: "",
+        url  : ""
+      }
+    ]
+  },
+  {
+    section:'Web Development', 
     section_subtitle:'Web based developments.',
     section_wisdom:'"Many Small Jobs, Every Job A Success"',
-    section_color:'rgba(0, 0, 255, .15)',
+    section_color:'rgba(0, 0, 255, .2)',
     projects: [
       {
         type : "website",
@@ -66,8 +86,8 @@ const data = [
   {
     section:'Commercial Work', 
     section_subtitle:'Commercial work from over the years.',
-    section_wisdom:'"Success is a Process"',
-    section_color:'rgba(2, 0, 0, .15)',
+    section_wisdom:'"Measure Twice, Cut Once"',
+    section_color:'rgba(120, 73, 0, .2)',
     projects: [
       {
         type : "garment",
@@ -111,7 +131,7 @@ const data = [
         title: "Anvil Mountain Forge Logo",
         date : "2021",
         body : "Done in Adobe Illustrator, this logo reaches for a comic-book-action style to convey monumentality.",
-        width: "400",
+        width: "320",
         url  : ""
       },
       {
@@ -148,8 +168,8 @@ const data = [
   {
     section:'Fine Arts', 
     section_subtitle:'Purely Artistic Persuits',
-    section_wisdom:'"The Situation Is In Charge"',
-    section_color:'rgba(148, 0, 211, .15)',
+    section_wisdom:'"You have to know your lines before you can forget your lines."',
+    section_color:'rgba(148, 0, 211, .2)',
     projects: [
       {
         type : "fineart",
@@ -158,7 +178,7 @@ const data = [
         title: "Beach Path",
         alt  : "Charcoal drawing of the path through the trees to the beach.",
         date : "2021",
-        body : "Charcoal and Guash on Paper. This path had an enchanted quality in the way the light and overgrowth formed the scene. I'm glad a captured something of it since the whole pathway was torn out and replaced the following year, it never regained its peacful otherworldly quality.",
+        body : "Charcoal and Guash on Paper. This path had an enchanted quality in the way the light and overgrowth formed the scene. I'm glad a captured something of it since the whole pathway was torn out and replaced the following year, it never regained its peaceful otherworldly quality.",
         width: "300",
         url  : ""
       },
@@ -192,14 +212,25 @@ const data = [
         body : "Wall hanging using a plexiglass convex mirror with designs etched into the bcking. Backlit with the light of coiled LED strips showing through and around. A remote control changes the color.",
         width: "300",
         url  : ""
-      }
+      },
+      {
+        type : "fineart",
+        icon : "pointofview.jpg",
+        image: "pointofview.jpg",
+        title: "Point of View",
+        alt  : "Oil painting of a childhood memory seen through the distorted lens of our fallable and imaginative memories.",
+        date : "",
+        body : "Oil paint on canvas, depiction of a childhood memory seen through the distorted lens of our fallable and imaginative memories.",
+        width: "500",
+        url  : ""
+      },
     ]
   },
   {
     section:'Motion Graphics', 
     section_subtitle:'Bumper animations from my multimedia days.',
-    section_wisdom:'"Measure Twice, Cut Once"',
-    section_color:'rgba(12, 73, 0, .15)',
+    section_wisdom:'"Success is a Process"',
+    section_color:'rgba(12, 73, 0, .2)',
     projects: [
       {
         type : "video",
@@ -233,7 +264,7 @@ const data = [
         ],
         posterframe : [
           "edayposterframe.png",
-          "edayposterframe.png",
+          "edayposterframe2.png",
           "edayposterframe.png"
         ],
         date : "2004",

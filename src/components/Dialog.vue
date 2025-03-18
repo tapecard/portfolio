@@ -67,7 +67,7 @@ export default {
       inputPoster: '',
       src: '',
       imageWidth: '',
-      imagePath: '/src/assets/images/',
+      imagePath: './src/assets/images/',
       d: document
     }
   },
@@ -97,6 +97,7 @@ export default {
     height: calc(100% - 100px);
     border: none;
     margin: 40px auto;
+    border-radius: 5px;
 
     h2, p, a {
       margin-bottom: 8px;
@@ -105,6 +106,8 @@ export default {
     h2 {
       padding-bottom: 8px;
       border-bottom: 1px solid #ccc;
+      text-indent: 8px;
+      text-align: left;
     }
     a {
       display: inline;
@@ -120,14 +123,12 @@ export default {
     }
   }
   .dialog__closebox {
-    width: 66px;
-    height: 66px;
+    width: 60px;
+    height: 60px;
     display: inline-block;
     position: fixed;
-    right: 8px;
-    top: 8px;
-    /*left: -3px;
-    top: -3px;*/
+    left: 3px;
+    top: 3px;
     margin: 10px 2vw 0 8px;
     padding: 12px 10px;
     vertical-align: text-bottom;
@@ -138,8 +139,8 @@ export default {
     cursor: pointer;
 
     span:nth-child(1) {
-      width: 60px;
-      height: 8px;
+      width: 50px;
+      height: 6px;
       margin: 0;
       display: block;
       background-color: #1d1d1d;
@@ -147,20 +148,20 @@ export default {
       border-radius: 4px;
       rotate: 45deg;
       position: absolute;
-      top: 30px;
-      right: 2px;
+      top: 27px;
+      right: 5px;
     }
     span:nth-child(2) {
-      width: 60px;
-      height: 8px;
+      width: 50px;
+      height: 6px;
       border-radius: 4px;
       display: block;
       margin: 0;
       background-color: #1d1d1d;
       rotate: -45deg;
       position: absolute;
-      top: 30px;
-      right: 2px;
+      top: 27px;
+      right: 5px;
     }
   }
   .dialog-content__wrapper {
@@ -186,11 +187,42 @@ export default {
   }
 @media (max-width: 767px) {
   dialog {
-    width: calc(100% - 20px);
-    height: calc(100% - 40px);
+    width: 100%;
+    height: calc(100% - 8px);
+    margin: 40px auto;
+    padding: 8px;
+
+    &:modal {
+      max-width: 100%
+    }
+    h2 {
+      text-align: center;
+    }
 
     img {
       max-width: 100%;
+    }
+  }
+  .dialog__closebox {
+    width: 55px;
+    height: 55px;
+    
+    left: 3px;
+    top: -3px;
+    margin: 10px 2vw 0 8px;
+    
+
+    span:nth-child(1) {
+      width: 40px;
+      height: 5px;
+      top: 25px;
+      right: 7px;
+    }
+    span:nth-child(2) {
+      width: 40px;
+      height: 5px;
+      top: 25px;
+      right: 7px;
     }
   }
   .dialog-content__wrapper {
@@ -200,10 +232,8 @@ export default {
     width: 100%;
   }
   .dialog__image {
-    width: 100%;
-  }
-  .dialog__image {
-    width: calc(100% - 20px);
+    width: calc(100% - 10px);
+    height: calc(100% - 10px);
   }
 }
 </style>

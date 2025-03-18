@@ -10,18 +10,15 @@
 
   <div class="nav__drawer" :class="{ 'nav__drawer--open': navOpen }">
     <div class="nav__drawer-slip">
-      <button class="nav__buttons" disabled="disabled" @click="selectArea(0)">
-        <div class="nav__buttons-main">Home</div>
-      </button>
       <button class="nav__buttons" 
-        v-for="(blob, i) in this.dataStore" 
+        v-for="(item, i) in this.dataStore" 
         :key="i" 
-        @click="selectArea(i+1)">
+        @click="selectArea(i)">
         <div class="nav__buttons-main">{{ this.dataStore[i].section }}</div>
-        <div class="nav__buttons-sub">{{ this.dataStore[i].section_subtitle }}</div>
+        <div v-if="i != 0" class="nav__buttons-sub">{{ this.dataStore[i].section_subtitle }}</div>
       </button>
     </div>
-    <div class="nav__out" @click="toggleDrawer"></div>
+    <!-- <div class="nav__out" @click="toggleDrawer"></div> -->
   </div>
 </template>
 
@@ -44,12 +41,12 @@ export default {
     },
     selectArea(index) {
       let navtree = this.d.getElementsByClassName('nav__buttons');
-      let elems = this.d.getElementsByClassName('currentOne');
+      let elems = this.d.getElementsByClassName('area--open');
       let el = this.d.getElementById("area" + index);
-      // this.d.body.style.backgroundColor = this.dataStore[index].section_color;
+      this.d.body.style.backgroundColor = this.dataStore[index].section_color;
       
-      elems[0].classList.remove('currentOne');
-      el.classList.add('currentOne');
+      elems[0].classList.remove('area--open');
+      el.classList.add('area--open');
 
       for (let element of navtree) {
         element.removeAttribute('disabled');
@@ -156,14 +153,14 @@ export default {
        display: block;
        margin-left: 0;
     }
-    .nav__out {
+    /*.nav__out {
       width: 100vw;
       height:  calc(100vh - 80px);
       position: absolute;
       top: 0;
       z-index: -1;
       left: -8px;
-    }
+    }*/
   }
 
   button {

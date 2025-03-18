@@ -1,5 +1,6 @@
 
 <template>
+  
     <button @click="startModal(this.projectData)" class="area__bucket">
       <h3 class="area__content">{{ this.projectData.title }}</h3>
       <span>
@@ -35,8 +36,8 @@ export default {
   width: 210px;
   height: 110px;
   border: 1px solid #fff;
-  margin: 16px;
-  border-radius: 12px;
+  margin: 20px;
+  border-radius: 6px;
   cursor: pointer;
   overflow: hidden;
   vertical-align: top;
