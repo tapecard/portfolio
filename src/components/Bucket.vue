@@ -1,11 +1,10 @@
 
 <template>
-  
-    <button @click="startModal(this.projectData)" class="area__bucket">
-      <h3 class="area__content">{{ this.projectData.title }}</h3>
+    <button @click="startModal(projectData)" class="area__bucket">
+      <h3 class="area__content">{{ projectData.title }}</h3>
       <span>
         <img class="area__icon" :src="getIconUrl()" />
-        <p v-html="this.projectData.body"></p>
+        <p v-html="projectData.body"></p>
       </span>
     </button>
 </template>
@@ -17,7 +16,7 @@ export default {
   props: ['projectData'],
   methods: {
     getIconUrl: function() {
-     return 'src/assets/icons/' + this.projectData.icon;
+     return './icons/' + this.projectData.icon;
     },
     startModal: function(projectData) {
       document.querySelector("dialog").showModal();

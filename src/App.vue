@@ -10,8 +10,8 @@ import data_store from './assets/data_store.js';
 <template>
   <header>
     <div class="headline">
-    <div style="max-width:1280px;margin:0 auto;position:relative;">
-      
+    <div class="headline__body">
+
       <NavWidget :dataStore="data_store" />
 
       <h1 class="headline__name">{{ header }}</h1>
@@ -28,7 +28,7 @@ import data_store from './assets/data_store.js';
     </div>
   </header>
 
-  <Dialog :inputData="this.inputData" />
+  <Dialog :inputData="inputData" />
 
   <div id="stage">
 
@@ -39,18 +39,17 @@ import data_store from './assets/data_store.js';
       <div v-if="i==0">
         <h2 class="area__name">{{ data_store[i].section_subtitle }}</h2>
         <div class="area__wisdom">{{ data_store[i].section_wisdom }}</div>
-        <img class="home__image" src="@/assets/Hero_dream.jpg" style="width:400px" alt="Dream of the mollusk, charcoal and quash on paper." />    
+        <img class="home__image" src="@/assets/Hero_dream.jpg" :alt="data_store[i].projects[0].alt" />
       </div>
 
       <div v-else-if="i>0">
         <h2 class="area__name">{{ data_store[i].section }}</h2>
         <div class="area__wisdom">{{ data_store[i].section_wisdom }}</div>
-        
         <Bucket 
           v-for="(project) in data_store[i].projects" 
           :key="i" 
           :projectData="project" 
-          @dialogData="this.setData($event)"
+          @dialogData="setData($event)"
           />
       </div>
     </div>
@@ -91,6 +90,11 @@ export default {
   z-index: 50;
   display: block;
 }
+.headline__body {
+  max-width:1280px;
+  margin:0 auto;
+  position:relative;
+}
 .headline__name {
   display: inline;
   font-size: 2rem;
@@ -130,6 +134,8 @@ export default {
 }
 .home__image {
   margin-top: 24px;
+  max-width: 400px;
+  width: 80%;
 }
 #stage {
   position: absolute;
@@ -236,6 +242,7 @@ export default {
   transform: rotate(0deg);
   transition: all .2s ease-in;
   display: block;
+  z-index: 45;
 }
 @media (max-width: 420px) {
   #area0.area--open,
@@ -255,10 +262,5 @@ export default {
   text-align: center;
   padding-top: 90px;
   display: none;
-}
-#area0.area--open {
-  padding-top: 90px;
-  z-index: 45;
-  display: block;
 }
 </style>

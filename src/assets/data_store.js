@@ -11,7 +11,7 @@ const data = [
         icon : "",
         image: "Hero_dream.jpg",
         title: "Home",
-        alt  : "screenshot of XenoGrotto website",
+        alt  : "Dream of the mollusk, charcoal and quash on paper.",
         date : "2025",
         body : "This e-commerce website was developed with a mobile focus and was developed on the Shopify platform. Desktop layouts were elimiated in favor of mobile simplicity for desktop views. The interface was built using customized blocks and sections. Product graphics are all original work.",
         width: "",

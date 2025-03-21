@@ -11,11 +11,11 @@
   <div class="nav__drawer" :class="{ 'nav__drawer--open': navOpen }">
     <div class="nav__drawer-slip">
       <button class="nav__buttons" 
-        v-for="(item, i) in this.dataStore" 
+        v-for="(item, i) in dataStore" 
         :key="i" 
         @click="selectArea(i)">
-        <div class="nav__buttons-main">{{ this.dataStore[i].section }}</div>
-        <div v-if="i != 0" class="nav__buttons-sub">{{ this.dataStore[i].section_subtitle }}</div>
+        <div class="nav__buttons-main">{{ dataStore[i].section }}</div>
+        <div v-if="i != 0" class="nav__buttons-sub">{{ dataStore[i].section_subtitle }}</div>
       </button>
     </div>
     <!-- <div class="nav__out" @click="toggleDrawer"></div> -->

@@ -9,42 +9,42 @@
 
       <div class="dialog__verbiage">
         <p v-html="inputData.body"></p>
-        <a v-if="this.inputUrl != ''" :href="this.inputUrl">
+        <a v-if="inputUrl != ''" :href="inputUrl">
           {{ inputData.url }}
         </a>
       </div>
 
       <div class="dialog__image">
-        <div v-if="inputData.type == 'video' && typeof this.inputImage === 'string'">
+        <div v-if="inputData.type == 'video' && typeof inputImage === 'string'">
           
-          <video :key="src" controls preload="auto" :poster="this.imagePath+inputData.posterframe" :style="{'width': imageWidth + 'px'}">
+          <video :key="src" controls preload="auto" :poster="imagePath+inputData.posterframe" :style="{'width': imageWidth + 'px'}">
           <source :src="src" type="video/mp4">
           </video>
         </div>
 
         <div 
-          v-if="inputData.type == 'video' && typeof this.inputImage === 'object'"
-          v-for="(imgUrl, i) in this.inputImage" 
+          v-if="inputData.type == 'video' && typeof inputImage === 'object'"
+          v-for="(imgUrl, i) in inputImage" 
           :key="i">
 
-          <video :key="src" controls preload="auto" :poster="this.imagePath+inputData.posterframe[i]" :style="{'width': imageWidth + 'px'}">
-            <source :src="this.imagePath+this.inputImage[i]" type="video/mp4">
+          <video :key="src" controls preload="auto" :poster="imagePath+inputData.posterframe[i]" :style="{'width': imageWidth + 'px'}">
+            <source :src="imagePath+inputImage[i]" type="video/mp4">
           </video>
         </div>
 
 
 
         <img 
-          v-else-if="inputData.type != 'video' && typeof this.inputImage === 'string'" 
-          :src="this.imagePath+inputData.image" 
-          :alt="this.inputAlt" 
+          v-else-if="inputData.type != 'video' && typeof inputImage === 'string'" 
+          :src="imagePath+inputData.image" 
+          :alt="inputAlt" 
           :style="{'width': imageWidth + 'px'}" />
 
-        <div v-else-if="inputData.type != 'video' && typeof this.inputImage === 'object'">
-          <img v-for="(imgUrl, i) in this.inputImage" 
+        <div v-else-if="inputData.type != 'video' && typeof inputImage === 'object'">
+          <img v-for="(imgUrl, i) in inputImage" 
             :key="i"
-            :src="this.imagePath+imgUrl"
-            :alt="this.inputAlt[i]"
+            :src="imagePath+imgUrl"
+            :alt="inputAlt[i]"
             :style="{'width': imageWidth + 'px'}" />
         </div>
         
@@ -67,7 +67,7 @@ export default {
       inputPoster: '',
       src: '',
       imageWidth: '',
-      imagePath: './src/assets/images/',
+      imagePath: './images/',
       d: document
     }
   },
@@ -137,6 +137,7 @@ export default {
     border-radius: 12px;
     border: 0;
     cursor: pointer;
+    z-index: 6000;
 
     span:nth-child(1) {
       width: 50px;
@@ -197,6 +198,7 @@ export default {
     }
     h2 {
       text-align: center;
+      margin-top: 10px;
     }
 
     img {
