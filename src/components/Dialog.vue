@@ -54,7 +54,6 @@
   </dialog>
 </template>
 
-
 <script>
 export default {
   name: 'Dialog',
@@ -98,6 +97,7 @@ export default {
     border: none;
     margin: 40px auto;
     border-radius: 5px;
+    max-width: 990px;
 
     h2, p, a {
       margin-bottom: 8px;
@@ -106,7 +106,7 @@ export default {
     h2 {
       padding-bottom: 8px;
       border-bottom: 1px solid #ccc;
-      text-indent: 8px;
+      text-indent: 45px;
       text-align: left;
     }
     a {
@@ -126,9 +126,9 @@ export default {
     width: 60px;
     height: 60px;
     display: inline-block;
-    position: fixed;
-    left: 3px;
-    top: 3px;
+    position: absolute;
+    left: -10px;
+    top: -10px;
     margin: 10px 2vw 0 8px;
     padding: 12px 10px;
     vertical-align: text-bottom;
@@ -138,6 +138,7 @@ export default {
     border: 0;
     cursor: pointer;
     z-index: 6000;
+    outline: 0;
 
     span:nth-child(1) {
       width: 50px;
@@ -184,7 +185,7 @@ export default {
     font-size: .75rem;
   }
   ::backdrop {
-    background-color: rgba(0,0,0,.5);
+    background-color: rgba(0,0,0,.575);
   }
 @media (max-width: 767px) {
   dialog {
@@ -199,6 +200,7 @@ export default {
     h2 {
       text-align: center;
       margin-top: 10px;
+      padding-bottom: 10px;
     }
 
     img {
@@ -208,9 +210,7 @@ export default {
   .dialog__closebox {
     width: 55px;
     height: 55px;
-    
     left: 3px;
-    top: -3px;
     margin: 10px 2vw 0 8px;
     
 

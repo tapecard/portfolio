@@ -1,5 +1,5 @@
 <script setup>
-import { RouterLink, RouterView } from 'vue-router'
+//import { RouterLink, RouterView } from 'vue-router';
 import NavWidget from './components/NavWidget.vue';
 import Bucket from './components/Bucket.vue';
 import Dialog from './components/Dialog.vue';
@@ -34,19 +34,22 @@ import data_store from './assets/data_store.js';
 
     <div v-for="(item, i) in data_store" 
       :key="i" 
-      :id="'area'+(i)" :class="i == 0 ? 'area--open' : ''">
+      class="projectaria"
+      :class="i == 0 ? 'area--open' : ''">
 
       <div v-if="i==0">
-        <h2 class="area__name">{{ data_store[i].section_subtitle }}</h2>
-        <div class="area__wisdom">{{ data_store[i].section_wisdom }}</div>
-        <img class="home__image" src="@/assets/Hero_dream.jpg" :alt="data_store[i].projects[0].alt" />
+        <button class="hero__target" @click="startModal0(data_store[i].projects[0])">
+          <h2 class="area__name">{{ data_store[i].section_subtitle }}</h2>
+          <div class="area__wisdom">{{ data_store[i].section_wisdom }}</div>
+          <img class="home__image" src="@/assets/Hero_dream.jpg" :alt="data_store[i].projects[0].alt" />
+        </button>
+          <h3 class="area__description">{{ data_store[i].section_description }}</h3>
       </div>
 
       <div v-else-if="i>0">
         <h2 class="area__name">{{ data_store[i].section }}</h2>
         <div class="area__wisdom">{{ data_store[i].section_wisdom }}</div>
-        <Bucket 
-          v-for="(project) in data_store[i].projects" 
+        <Bucket v-for="(project) in data_store[i].projects" 
           :key="i" 
           :projectData="project" 
           @dialogData="setData($event)"
@@ -54,7 +57,20 @@ import data_store from './assets/data_store.js';
       </div>
     </div>
 
+    <div class="footer__links">
+      <button class="footer__buttons" 
+          v-for="(item, f) in data_store" 
+          :key="f" 
+          @click="selectArea(f)">
+        <span>{{ data_store[f].section }}</span>
+      </button>
+    </div>
+    <div class="copyright">
+     All Work &copy;{{thisYear}} Michael P. Cohen
+    </div>
+
   </div>
+  
 </template>
 
 
@@ -70,12 +86,35 @@ export default {
     return {
       data_store,
       header: 'Michael P. Cohen',
-      inputData: {}
+      inputData: {},
+      thisYear: new Date().getFullYear(),
+      d: document,
+      navOpen: ''
     }
   },
   methods: {
     setData(data) {
       this.inputData = data;
+      this.navOpen = false;
+    },
+    startModal0: function(projectData) {
+      this.setData(projectData);
+      this.d.querySelector("dialog").showModal();
+    },
+    selectArea(index) {
+      let navtree = this.d.getElementsByClassName('nav__buttons');
+      let elems = this.d.getElementsByClassName('area--open');
+      let el = this.d.getElementById("stage").children[index];
+
+      this.d.body.style.backgroundColor = this.data_store[index].section_color;
+      
+      elems[0].classList.remove('area--open');
+      el.classList.add('area--open');
+
+      for (let element of navtree) {
+        element.removeAttribute('disabled');
+      }
+      navtree[index].setAttribute('disabled', 'disabled');
     }
   }
 }
@@ -91,9 +130,9 @@ export default {
   display: block;
 }
 .headline__body {
-  max-width:1280px;
+  max-width: 1280px;
   margin:0 auto;
-  position:relative;
+  position: relative;
 }
 .headline__name {
   display: inline;
@@ -111,6 +150,28 @@ export default {
   position: absolute;
   top: 0;
   right: 0;
+}
+.footer__links {
+  max-width: calc(100% - 60px);
+  margin: 0 auto;
+}
+.footer__buttons,
+.hero__target {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+.footer__buttons {
+  padding: 12px;
+  color: #fff;
+  font-size: 1rem;
+}
+.footer__buttons:hover {
+  text-decoration: underline
+}
+.copyright {
+  font-size: .75rem;
 }
 @media (max-width: 420px) {
   .headline__links {
@@ -147,14 +208,14 @@ export default {
   right: 0;
   z-index: 0;
   display: block;
-   text-align: center;
+  text-align: center;
 }
 #stage div {
   vertical-align: middle;
   color: #fff;
   font-family: sans-serif;
 }
-#stage .area--open span {
+.area--open span {
   font-size: 14px;
   line-height: 1;
   top: 130px;
@@ -170,6 +231,7 @@ export default {
   padding: 0 16px;
   font-weight: bold;
   max-width: 1280px;
+  text-shadow: .5px .5px .5px #1d1d1d;
   margin: 0 auto;
 }
 .area__wisdom {
@@ -180,87 +242,42 @@ export default {
   width: 600px;
   color: #fff;
   left: -284px;
-  top: 400px;
+  top: 300px;
 }
-#area1 {
-/*  transform: rotate(45deg);*/
-/*  background-color: rgba(0, 0, 255, .15);*/
-  width: 10px;
-  height: 10px;
-  top: -1420px;
-  left: -600px;
-  transition: all .3s ease-in;
+.area__description {
+  font-size: .875rem;
+  max-width: 400px;
+  margin: 0 auto;
+}
+.hero__target {
+  color: aliceblue;
+}
+.projectaria {
+  position: relative;
+  text-align: center;
   display: none;
-}
-#area2 {
-  left: -50px;
-  top: -1420px;
-  width: 10px;
-  height: 10px;
-/*  transform: rotate(135deg);*/
   transition: all .3s ease-in;
-  display: none;
 }
-#area3 {
-  right: -90px;
-  top: -1420px;
-  width: 10px;
-  height: 10px;
-/*  transform: rotate(180deg);*/
-  transition: all .3s ease-in;
-  display: none;
-}
-#area4 {
-  top: -1420px;
-  right: -140px;
-  width: 10px;
-  height: 10px;
-/*  transform: rotate(1135deg);*/
-  transition: all .3s ease-in;
-  display: none;
-}
-#area5 {
-  left: -880px;
-  top: -1140px;
-  width: 50px;
-  height: 50px;
-/*  transform: rotate(-45deg);*/
-  transition: all .3s ease-in;
-  display: none;
-}
-#area0.area--open,
-#area1.area--open,
-#area2.area--open,
-#area3.area--open,
-#area4.area--open,
-#area5.area--open {
-  position: absolute;
-  left: 0;
-  top: 0;
+.projectaria.area--open {
+  top: initial;
+  right: initial;
+  left: initial;
+  width: initial;
+  height: initial;
   width: 100vw;
-  padding-top: 90px;
+  margin-top: 90px;
   transform: rotate(0deg);
   transition: all .2s ease-in;
   display: block;
   z-index: 45;
+
 }
 @media (max-width: 420px) {
-  #area0.area--open,
-  #area1.area--open,
-  #area2.area--open,
-  #area3.area--open,
-  #area4.area--open,
-  #area5.area--open  {
-    top: 20px;
+  .projectaria {
+    margin-top: 110px;
   }
   .area__name {
     font-size: 1.5rem;
   }
-}
-#area0 {
-  position: relative;
-  text-align: center;
-  padding-top: 90px;
-  display: none;
 }
 </style>

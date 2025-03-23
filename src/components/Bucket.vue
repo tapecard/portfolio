@@ -41,6 +41,7 @@ export default {
   overflow: hidden;
   vertical-align: top;
   text-align: left;
+  box-shadow: .25px .25px .25px #555;
 }
 .area__bucket:after {
   content: "";

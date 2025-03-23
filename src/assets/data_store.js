@@ -3,18 +3,18 @@ const data = [
     section:'Home', 
     section_subtitle:'Gallery of Unique',
     section_wisdom:'"The Situation is in Charge"',
-    section_description:'Welcome to my portfolio, it contains a wide variety of work from fine arts to web development, spanning mediums and years.',
-    section_color:'rgba(0, 0, 0, .2)',
+    section_description:"Welcome to my portfolio, it's a range of work spanning different mediums over different parts of my career.",
+    section_color:'rgba(0, 0, 0, .25)',
     projects: [
       {
         type : "Homepage",
         icon : "",
         image: "Hero_dream.jpg",
-        title: "Home",
-        alt  : "Dream of the mollusk, charcoal and quash on paper.",
-        date : "2025",
-        body : "This e-commerce website was developed with a mobile focus and was developed on the Shopify platform. Desktop layouts were elimiated in favor of mobile simplicity for desktop views. The interface was built using customized blocks and sections. Product graphics are all original work.",
-        width: "",
+        title: "Dream of the Mollusk",
+        alt  : "Dream of the mollusk, Charcoal and Guash on paper.",
+        date : "2024",
+        body : "A strange and beautiful seashell left over from the creature that lived in and created it. What was it's perception of the world? This intricately textured and detailed Charcoal and Guash drawing measures 10 x 12\".",
+        width: "420",
         url  : ""
       }
     ]
@@ -23,7 +23,7 @@ const data = [
     section:'Web Development', 
     section_subtitle:'Web based developments.',
     section_wisdom:'"Many Small Jobs, Every Job A Success"',
-    section_color:'rgba(0, 0, 255, .2)',
+    section_color:'rgba(0, 0, 255, .25)',
     projects: [
       {
         type : "website",
@@ -32,7 +32,7 @@ const data = [
         title: "XenoGrotto Website",
         alt  : "screenshot of XenoGrotto website",
         date : "2024",
-        body : "This e-commerce website was developed with a mobile focus and was developed on the Shopify platform. Desktop menus were elimiated in favor of mobile simplicity for desktop views. The interface was built using customized blocks and sections. Product graphics are all original work.",
+        body : "This e-commerce website was designed with a mobile focus and was developed on the Shopify platform. Desktop menus were elimiated in favor of mobile simplicity for desktop views. The interface was built using customized blocks and sections. Product graphics are all original work.",
         width: "",
         url  : "https://xenogrotto.com"
       },
@@ -87,7 +87,7 @@ const data = [
     section:'Commercial Work', 
     section_subtitle:'Commercial work from over the years.',
     section_wisdom:'"Measure Twice, Cut Once"',
-    section_color:'rgba(120, 73, 0, .2)',
+    section_color:'rgba(120, 73, 0, .25)',
     projects: [
       {
         type : "garment",
@@ -130,7 +130,7 @@ const data = [
         alt  : "Black and white illustration of a Monumental forge",
         title: "Anvil Mountain Forge Logo",
         date : "2021",
-        body : "Done in Adobe Illustrator, this logo reaches for a comic-book-action style to convey monumentality.",
+        body : "Done in Adobe Illustrator, this logo reaches for a comic-book-action style to convey monumentality. The stark black and white conveys the enormus energy inherent in blacksmithing.",
         width: "320",
         url  : ""
       },
@@ -169,7 +169,7 @@ const data = [
     section:'Fine Arts', 
     section_subtitle:'Purely Artistic Persuits',
     section_wisdom:'"You have to know your lines before you can forget your lines."',
-    section_color:'rgba(148, 0, 211, .2)',
+    section_color:'rgba(148, 0, 211, .25)',
     projects: [
       {
         type : "fineart",
@@ -192,7 +192,7 @@ const data = [
         title: "Beach Day #3",
         alt  : "Charcoal drawing of the path through the trees to the beach.",
         date : "2021",
-        body : "Charcoal and guash on paper, watercolor on paper series",
+        body : "Charcoal and Guash on paper, watercolor on paper series. Consisting of a charcoal drawing and a series of watercolors The charcoal is a traditional rendering while the paintings are all unique abstractions of the subject.",
         width: "400",
         url  : ""
       },
@@ -204,12 +204,12 @@ const data = [
           "shield2.jpg"
         ],
         alt: [
-          "Plexyglass convex mirror backlit with LED lighting showing through etchings and around the edge.",
-          "Plexyglass convex mirror backlit with LED lighting showing through etchings and around the edge."
+          "Plexyglass convex mirror backlit in green with LED lighting showing through etchings and around the edge.",
+          "Plexyglass convex mirror backlit in purple with LED lighting showing through etchings and around the edge."
         ],
         title: "Shield",
         date : "2002",
-        body : "Wall hanging using a plexiglass convex mirror with designs etched into the bcking. Backlit with the light of coiled LED strips showing through and around. A remote control changes the color.",
+        body : "Wall hanging using a plexiglass convex mirror with details etched into the backing. Backlit with the light of coiled LED strips showing through and around. A remote control changes the color.",
         width: "300",
         url  : ""
       },
@@ -217,11 +217,11 @@ const data = [
         type : "fineart",
         icon : "pointofview.jpg",
         image: "pointofview.jpg",
-        title: "Point of View",
+        title: "View Port",
         alt  : "Oil painting of a childhood memory seen through the distorted lens of our fallable and imaginative memories.",
         date : "",
         body : "Oil paint on canvas, depiction of a childhood memory seen through the distorted lens of our fallable and imaginative memories.",
-        width: "500",
+        width: "400",
         url  : ""
       },
     ]
@@ -230,7 +230,7 @@ const data = [
     section:'Motion Graphics', 
     section_subtitle:'Bumper animations from my multimedia days.',
     section_wisdom:'"Success is a Process"',
-    section_color:'rgba(12, 73, 0, .2)',
+    section_color:'rgba(12, 73, 0, .25)',
     projects: [
       {
         type : "video",

@@ -42,7 +42,8 @@ export default {
     selectArea(index) {
       let navtree = this.d.getElementsByClassName('nav__buttons');
       let elems = this.d.getElementsByClassName('area--open');
-      let el = this.d.getElementById("area" + index);
+      let el = this.d.getElementById("stage").children[index];
+      
       this.d.body.style.backgroundColor = this.dataStore[index].section_color;
       
       elems[0].classList.remove('area--open');
@@ -140,7 +141,8 @@ export default {
   border-radius: 12px;
   background: linear-gradient(20deg, rgba(255,255,255,.75) 0%, rgba(255,255,255,.5) 100%); 
   box-shadow: 0 0 20px 20px #fff inset;
-  backdrop-filter: blur(6px);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   transition: all .15s ease;
   z-index: 2;
 
@@ -182,7 +184,7 @@ export default {
 }
 .nav__drawer-slip {
   width: 240px;
-  margin-left: -240px;
+  margin-left: -2400px;
 }
 .nav__buttons-main {
   font-weight: bold;
