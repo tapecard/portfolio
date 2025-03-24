@@ -2,13 +2,13 @@
   <button 
         @click="toggleDrawer"
         class="nav__widget" 
-        :class="{ 'nav__widget--open': navOpen }">
+        :class="{ 'nav__widget--open': navState }">
     <span></span>
     <span></span>
     <span></span>
   </button>
 
-  <div class="nav__drawer" :class="{ 'nav__drawer--open': navOpen }">
+  <div class="nav__drawer" :class="{ 'nav__drawer--open': navState }">
     <div class="nav__drawer-slip">
       <button class="nav__buttons" 
         v-for="(item, i) in dataStore" 
@@ -18,7 +18,6 @@
         <div v-if="i != 0" class="nav__buttons-sub">{{ dataStore[i].section_subtitle }}</div>
       </button>
     </div>
-    <!-- <div class="nav__out" @click="toggleDrawer"></div> -->
   </div>
 </template>
 
@@ -26,18 +25,23 @@
 <script>
 export default {
   name: 'NavWidget',
-  props: ['dataStore'],
+  props: ['dataStore','trigger'],
   components: {
   },
   data() { 
     return {
-      navOpen: false,
+      navState: false,
       d: document
+    }
+  },
+  watch: {
+    trigger() {
+      this.navState = false;
     }
   },
   methods: {
     toggleDrawer() {
-      this.navOpen = !this.navOpen;
+      this.navState = !this.navState;
     },
     selectArea(index) {
       let navtree = this.d.getElementsByClassName('nav__buttons');
@@ -53,7 +57,7 @@ export default {
         element.removeAttribute('disabled');
       }
       navtree[index].setAttribute('disabled', 'disabled');
-      this.navOpen = false;
+      this.navState = false;
     }
   }
 }
@@ -155,14 +159,6 @@ export default {
        display: block;
        margin-left: 0;
     }
-    /*.nav__out {
-      width: 100vw;
-      height:  calc(100vh - 80px);
-      position: absolute;
-      top: 0;
-      z-index: -1;
-      left: -8px;
-    }*/
   }
 
   button {

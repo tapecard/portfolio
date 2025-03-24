@@ -21,6 +21,7 @@ export default {
     startModal: function(projectData) {
       document.querySelector("dialog").showModal();
       this.$emit('dialogData', this.projectData);
+      this.$emit('navState', false);
     }
   }
 }

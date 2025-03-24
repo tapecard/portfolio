@@ -12,7 +12,7 @@ import data_store from './assets/data_store.js';
     <div class="headline">
     <div class="headline__body">
 
-      <NavWidget :dataStore="data_store" />
+      <NavWidget :dataStore="data_store" :trigger="navState" />
 
       <h1 class="headline__name">{{ header }}</h1>
 
@@ -53,6 +53,7 @@ import data_store from './assets/data_store.js';
           :key="i" 
           :projectData="project" 
           @dialogData="setData($event)"
+          @navState="setState($event)"
           />
       </div>
     </div>
@@ -66,7 +67,7 @@ import data_store from './assets/data_store.js';
       </button>
     </div>
     <div class="copyright">
-     All Work &copy;{{thisYear}} Michael P. Cohen
+     All work &copy;{{ thisYear }} Michael P. Cohen
     </div>
 
   </div>
@@ -89,13 +90,15 @@ export default {
       inputData: {},
       thisYear: new Date().getFullYear(),
       d: document,
-      navOpen: ''
+      navState: false
     }
   },
   methods: {
+    setState(arg) {
+      this.navState = !this.navState;
+    },
     setData(data) {
       this.inputData = data;
-      this.navOpen = false;
     },
     startModal0: function(projectData) {
       this.setData(projectData);
@@ -115,6 +118,7 @@ export default {
         element.removeAttribute('disabled');
       }
       navtree[index].setAttribute('disabled', 'disabled');
+      this.setState();
     }
   }
 }
