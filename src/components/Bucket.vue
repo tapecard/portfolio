@@ -1,6 +1,6 @@
 
 <template>
-    <button @click="startModal(projectData)" class="area__bucket">
+    <button aria-haspopup="dialog" @click="startModal(projectData)" class="area__bucket">
       <h3 class="area__content">{{ projectData.title }}</h3>
       <span>
         <img class="area__icon" :src="getIconUrl()" />
@@ -20,8 +20,8 @@ export default {
     },
     startModal: function(projectData) {
       document.querySelector("dialog").showModal();
+      this.$emit('currentData', this.projectData);
       this.$emit('dialogData', this.projectData);
-      this.$emit('navState', false);
     }
   }
 }

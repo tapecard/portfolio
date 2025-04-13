@@ -1,55 +1,53 @@
 <template>
-  <dialog>
-    <button @click="closeDialog" autofocus class="dialog__closebox">
+  <dialog role="dialog" aria-labelledby="dialog-title">
+    <button @click="closeDialog" aria-label="Close Dialog" autofocus class="dialog__closebox">
       <span></span>
       <span></span>
     </button>
-    <h2>{{ inputData.title }}<span class="dialog__date">{{ inputData.date }}</span></h2>
+    <h2 id="dialog-title">{{ inputData.title }}<span class="dialog__date">{{ inputData.date }}</span></h2>
     <div class="dialog-content__wrapper">
 
       <div class="dialog__verbiage">
         <p v-html="inputData.body"></p>
-        <a v-if="inputUrl != ''" :href="inputUrl">
+        <a v-if="inputUrl != ''" :href="inputUrl" target="_new">
           {{ inputData.url }}
         </a>
       </div>
 
-      <div class="dialog__image">
-        <div v-if="inputData.type == 'video' && typeof inputImage === 'string'">
-          
-          <video :key="src" controls preload="auto" :poster="imagePath+inputData.posterframe" :style="{'width': imageWidth + 'px'}">
-          <source :src="src" type="video/mp4">
-          </video>
-        </div>
+      <div class="image__wrapper">
+        <div class="dialog__image">
+          <div v-if="inputData.type == 'video' && typeof inputImage === 'string'">
+            
+            <video :key="src" controls preload="auto" :poster="imagePath+inputData.posterframe" :style="{'width': imageWidth + 'px'}">
+              <source :src="src" type="video/mp4">
+            </video>
+          </div>
 
-        <div 
-          v-if="inputData.type == 'video' && typeof inputImage === 'object'"
-          v-for="(imgUrl, i) in inputImage" 
-          :key="i">
+          <div 
+            v-if="inputData.type == 'video' && typeof inputImage === 'object'"
+            v-for="(imgUrl, i) in inputImage" 
+            :key="i">
 
-          <video :key="src" controls preload="auto" :poster="imagePath+inputData.posterframe[i]" :style="{'width': imageWidth + 'px'}">
-            <source :src="imagePath+inputImage[i]" type="video/mp4">
-          </video>
-        </div>
+            <video :key="src" controls preload="auto" :poster="imagePath+inputData.posterframe[i]" :style="{'width': imageWidth + 'px'}">
+              <source :src="imagePath+inputImage[i]" type="video/mp4">
+            </video>
+          </div>
 
-
-
-        <img 
-          v-else-if="inputData.type != 'video' && typeof inputImage === 'string'" 
-          :src="imagePath+inputData.image" 
-          :alt="inputAlt" 
-          :style="{'width': imageWidth + 'px'}" />
-
-        <div v-else-if="inputData.type != 'video' && typeof inputImage === 'object'">
-          <img v-for="(imgUrl, i) in inputImage" 
-            :key="i"
-            :src="imagePath+imgUrl"
-            :alt="inputAlt[i]"
+          <img 
+            v-else-if="inputData.type != 'video' && typeof inputImage === 'string'" 
+            :src="imagePath+inputData.image" 
+            :alt="inputAlt" 
             :style="{'width': imageWidth + 'px'}" />
-        </div>
-        
-      </div>
 
+          <div v-else-if="inputData.type != 'video' && typeof inputImage === 'object'">
+            <img v-for="(imgUrl, i) in inputImage" 
+              :key="i"
+              :src="imagePath+imgUrl"
+              :alt="inputAlt[i]"
+              :style="{'width': imageWidth + 'px'}" />
+          </div>
+        </div>
+      </div>
     </div>
   </dialog>
 </template>
@@ -66,14 +64,16 @@ export default {
       inputPoster: '',
       src: '',
       imageWidth: '',
-      imagePath: './images/',
-      d: document
+      imagePath: './images/'
     }
   },
   methods: {
     closeDialog() {
-      this.d.querySelector("dialog").close();
-      this.d.querySelector("video").pause();
+      let d = document;
+      d.querySelector("dialog").close();
+      if (d.querySelector("video")) {
+        d.querySelector("video").pause();
+      }
       this.imageWidth = '';
     }
   },
@@ -98,6 +98,8 @@ export default {
     margin: 40px auto;
     border-radius: 5px;
     max-width: 990px;
+    background-color: #efefef;
+    overflow: hidden;
 
     h2, p, a {
       margin-bottom: 8px;
@@ -132,7 +134,7 @@ export default {
     margin: 10px 2vw 0 8px;
     padding: 12px 10px;
     vertical-align: text-bottom;
-    background-color: #fff;
+    background-color: #efefef;
     margin-top: 8px;
     border-radius: 12px;
     border: 0;
@@ -169,15 +171,19 @@ export default {
   .dialog-content__wrapper {
     display: flex;
     flex-direction: row;
+    height: calc(100% - 40px);
   }
   .dialog__verbiage {
     width: 30%;
     padding: 8px;
   }
+  .image__wrapper {
+    height: auto;
+    overflow: scroll;
+    margin: 8px auto;
+  }
   .dialog__image {
     text-align: center;
-    margin: 8px auto;
-    width: 70%;
     padding: 0 20px;
   }
   .dialog__date {
@@ -202,7 +208,9 @@ export default {
       margin-top: 10px;
       padding-bottom: 10px;
     }
-
+    video {
+      width: 90%!important;
+    }
     img {
       max-width: 100%;
     }

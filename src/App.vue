@@ -34,13 +34,13 @@ import data_store from './assets/data_store.js';
 
     <div v-for="(item, i) in data_store" 
       :key="i" 
-      class="projectaria"
+      class="project__area"
       :class="i == 0 ? 'area--open' : ''">
 
       <div v-if="i==0">
         <button class="hero__target" @click="startModal0(data_store[i].projects[0])">
           <h2 class="area__name">{{ data_store[i].section_subtitle }}</h2>
-          <div class="area__wisdom">{{ data_store[i].section_wisdom }}</div>
+          <div class="area__sideline">{{ data_store[i].section_sideline }}</div>
           <img class="home__image" src="@/assets/Hero_dream.jpg" :alt="data_store[i].projects[0].alt" />
         </button>
           <h3 class="area__description">{{ data_store[i].section_description }}</h3>
@@ -48,12 +48,11 @@ import data_store from './assets/data_store.js';
 
       <div v-else-if="i>0">
         <h2 class="area__name">{{ data_store[i].section }}</h2>
-        <div class="area__wisdom">{{ data_store[i].section_wisdom }}</div>
+        <div class="area__sideline">{{ data_store[i].section_sideline }}</div>
         <Bucket v-for="(project) in data_store[i].projects" 
           :key="i" 
           :projectData="project" 
           @dialogData="setData($event)"
-          @navState="setState($event)"
           />
       </div>
     </div>
@@ -89,7 +88,6 @@ export default {
       header: 'Michael P. Cohen',
       inputData: {},
       thisYear: new Date().getFullYear(),
-      d: document,
       navState: false
     }
   },
@@ -99,20 +97,22 @@ export default {
     },
     setData(data) {
       this.inputData = data;
+      this.setState();
     },
     startModal0: function(projectData) {
       this.setData(projectData);
-      this.d.querySelector("dialog").showModal();
+      document.querySelector("dialog").showModal();
     },
     selectArea(index) {
-      let navtree = this.d.getElementsByClassName('nav__buttons');
-      let elems = this.d.getElementsByClassName('area--open');
-      let el = this.d.getElementById("stage").children[index];
+      let d = document;
+      let navtree = d.getElementsByClassName('nav__buttons');
+      let openOne = d.getElementsByClassName('area--open');
+      let visibleOne = d.getElementById("stage").children[index];
 
-      this.d.body.style.backgroundColor = this.data_store[index].section_color;
+      d.body.style.background = this.data_store[index].section_background;
       
-      elems[0].classList.remove('area--open');
-      el.classList.add('area--open');
+      openOne[0].classList.remove('area--open');
+      visibleOne.classList.add('area--open');
 
       for (let element of navtree) {
         element.removeAttribute('disabled');
@@ -126,6 +126,7 @@ export default {
 
 
 <style scoped>
+
 .headline {
   width: 100%;
   background-image: linear-gradient(0deg, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 90%);
@@ -177,18 +178,6 @@ export default {
 .copyright {
   font-size: .75rem;
 }
-@media (max-width: 420px) {
-  .headline__links {
-    justify-content: space-around;
-    width: 100%;
-  }
-  .headline__name {
-    font-size: 1.75rem;
-  }
-  .nav__widget {
-    margin-top: 24px;
-  }
-}
 .headline__links a {
   display: inline;
   font-size: .75rem;
@@ -238,31 +227,33 @@ export default {
   text-shadow: .5px .5px .5px #1d1d1d;
   margin: 0 auto;
 }
-.area__wisdom {
+.area__sideline {
   text-align: right;
   transform: rotate(-90deg);
   position: fixed;
   font-size: 1.25rem;
   width: 600px;
-  color: #fff;
   left: -284px;
   top: 300px;
+  opacity: .5;
 }
 .area__description {
-  font-size: .875rem;
+  font-size: 1.25rem;
   max-width: 400px;
-  margin: 0 auto;
+  margin: 10px auto;
+  width: calc(100% - 44px);
+  line-height: 1.1;
 }
 .hero__target {
   color: aliceblue;
 }
-.projectaria {
+.project__area {
   position: relative;
   text-align: center;
   display: none;
   transition: all .3s ease-in;
 }
-.projectaria.area--open {
+.project__area.area--open {
   top: initial;
   right: initial;
   left: initial;
@@ -274,14 +265,26 @@ export default {
   transition: all .2s ease-in;
   display: block;
   z-index: 45;
-
 }
 @media (max-width: 420px) {
-  .projectaria {
+  .headline__links {
+    justify-content: space-around;
+    width: 100%;
+  }
+  .headline__name {
+    font-size: 1.75rem;
+  }
+  .nav__widget {
+    margin-top: 24px;
+  }
+  .project__area.area--open {
     margin-top: 110px;
   }
   .area__name {
     font-size: 1.5rem;
+  }
+  .area__sideline {
+    font-size: 1rem;
   }
 }
 </style>

@@ -1,6 +1,7 @@
 <template>
   <button 
         @click="toggleDrawer"
+        aria-haspopup="menu"
         class="nav__widget" 
         :class="{ 'nav__widget--open': navState }">
     <span></span>
@@ -8,9 +9,9 @@
     <span></span>
   </button>
 
-  <div class="nav__drawer" :class="{ 'nav__drawer--open': navState }">
+  <div class="nav__drawer" role="menu" :class="{ 'nav__drawer--open': navState }">
     <div class="nav__drawer-slip">
-      <button class="nav__buttons" 
+      <button role="menuitem" class="nav__buttons" 
         v-for="(item, i) in dataStore" 
         :key="i" 
         @click="selectArea(i)">
@@ -28,10 +29,9 @@ export default {
   props: ['dataStore','trigger'],
   components: {
   },
-  data() { 
+  data() {
     return {
-      navState: false,
-      d: document
+      navState: false
     }
   },
   watch: {
@@ -44,14 +44,15 @@ export default {
       this.navState = !this.navState;
     },
     selectArea(index) {
-      let navtree = this.d.getElementsByClassName('nav__buttons');
-      let elems = this.d.getElementsByClassName('area--open');
-      let el = this.d.getElementById("stage").children[index];
+      let d = document;
+      let navtree = d.getElementsByClassName('nav__buttons');
+      let openOne = d.getElementsByClassName('area--open');
+      let visibleOne = d.getElementById("stage").children[index];
       
-      this.d.body.style.backgroundColor = this.dataStore[index].section_color;
+      d.body.style.background = this.dataStore[index].section_background;
       
-      elems[0].classList.remove('area--open');
-      el.classList.add('area--open');
+      openOne[0].classList.remove('area--open');
+      visibleOne.classList.add('area--open');
 
       for (let element of navtree) {
         element.removeAttribute('disabled');
@@ -171,6 +172,7 @@ export default {
     border-color: transparent;
     border-bottom-right-radius: 8px;
     width: 100%;
+    color: #1d1d1d;
 
     &:disabled {
       cursor: default;
@@ -189,8 +191,18 @@ export default {
   font-size: .75rem;
 }
 @media (max-width: 420px) {
+  .nav__drawer.nav__drawer--open {
+    width:320px;
+  }
+  .nav__drawer-slip {
+    width: 320px;
+  }
+  .nav__buttons-main {
+    font-size: 1rem;
+  }
   .nav__widget {
     margin-top: 36px;
   }
+
 }
 </style>
