@@ -176,6 +176,7 @@ export default {
   .dialog__verbiage {
     width: 30%;
     padding: 8px;
+    min-width: 250px;
   }
   .image__wrapper {
     height: auto;
@@ -195,9 +196,9 @@ export default {
   }
 @media (max-width: 767px) {
   dialog {
-    width: 100%;
-    height: calc(100% - 8px);
-    margin: 40px auto;
+    width: calc(100% - 16px);;
+    height: calc(100% - 16px);
+    margin:  auto;
     padding: 8px;
 
     &:modal {

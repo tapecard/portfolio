@@ -54,16 +54,43 @@ const data = [
         title: "Baltimore Ski Club Website",
         alt  : "screenshot of Baltimore Ski Club website",
         date : "2024",
-        body : "The website of the Baltimore Ski Club.<p>This site is the portal for membership and events. It is regularly updated with current trip information. Developed in Word Press, the site accepts payments for membership and maintains the scheduling for trips, activities, and meetings.",
-        width: "",
+        body : "This site is the portal for Club membership and events. It is regularly updated with current trip information. Developed in Word Press, the site accepts payments for membership and maintains the scheduling for trips, activities, and meetings.",
+        width: "600",
         url  : "https://baltimoreskiclub.org"
       },
       {
         type : "website",
+        icon : "hypertextparty.png",
+        image: "hypertextparty.jpg",
+        title: "Hypertext Party",
+        alt  : "Screenshot of Hypertext Party web app",
+        date : "2024",
+        body : "Hypertext Party is inspired by the Animate.css library. This proof of concept tool demonstrates various animated text effects. Developed using a component structure in Vue.js, it serves as a playground for working and developing in Vue as well as trying out new ideas for text-based special effects.",
+        width: "600",
+        url  : "https://tapecard.com/hypertext/"
+      },
+      {
+        type : "website",
         icon : "skeetsheet.png",
-        image: "skeetsheet-d.jpg",
+        image: 
+          [ 
+            "skeetsheet-a.png",
+            "skeetsheet-b.jpg",
+            "skeetsheet-c.jpg",
+            "skeetsheet-d.jpg",
+            "skeetsheet-e.png",
+            "skeetsheet-f.jpg"
+          ],
         title: "Skeet Tracker Website",
-        alt  : "screenshot of Baltimore Ski Club website",
+        alt  : 
+          [
+            "screenshot of Skeet Sheet Homepage.",
+            "screenshot of Skeet Sheet statistics.",
+            "screenshot of Skeet Sheet Round Edit screen.",
+            "screenshot of Skeet Sheet Station Averages screen.",
+            "screenshot of Skeet Sheet mobile component.",
+            "closeup screenshot of Station Averages screen."
+          ],
         date : "2011",
         body : "Skeet sheet is a web app for storing and analizing skeet score data. A multi-part project requiring PHP, MySQL, CSS, and Javascript. It features an innovative user controlled picklist in a space saving layout designed for handhelds. Users can track scores round by round on a handheld device, then upload the scores for later analysis in the desktop module.",
         width: "",
@@ -162,6 +189,17 @@ const data = [
         body : "Illustration for the spring 2012 CECOM Today Magazine Cover, Developed in Photoshop.",
         width: "300",
         url  : ""
+      },
+      {
+        type : "commart",
+        icon : "maithai.png",
+        image: "maithai-large.jpg",
+        title: "Mai Thai Restaurant Billboard",
+        alt  : "Billboard illustration for Mai Thai restaurant shows popular dishes and Thai artwork",
+        date : "2008",
+        body : "Mai Thai Billboard displayed at Augusta Airport. Adobe Photoshop",
+        width: "600",
+        url  : "",
       }
     ]
   },
@@ -236,6 +274,16 @@ const data = [
     projects: [
       {
         type : "video",
+        icon : "viscom.jpg",
+        image: "viscom500x281.mov",
+        title: "Viscom Bumper",
+        date : "2012",
+        body : "Animated Logo idea for Software Engineering Center. Developed in Adobe After Effects. Includes space at the bottom of the frame for text.",
+        width: "400",
+        url  : ""
+      },
+      {
+        type : "video",
         icon : "e411.png",
         image: "e411intro320x240.mp4",
         posterframe : "e411poster.jpg",
@@ -243,16 +291,6 @@ const data = [
         date : "2008",
         body : "E411 Video Intro for environmental outreach spots on youtube, Developed in Final Cut Pro.",
         width: "320",
-        url  : ""
-      },
-      {
-        type : "video",
-        icon : "viscom.jpg",
-        image: "viscom500x281.mov",
-        title: "Viscom Bumper",
-        date : "2012",
-        body : "Animated Logo idea for Software Engineering Center. Developed in Adobe After Effects. Includes space at the bottom of the frame for text.",
-        width: "400",
         url  : ""
       },
       {
