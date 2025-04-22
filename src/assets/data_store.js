@@ -162,6 +162,25 @@ const data = [
         url  : ""
       },
       {
+        type : "garment",
+        icon : "3orchidIcon.png",
+        image: [
+            "3orchidShirt2.jpg",
+            "3orchidShirt3.jpg",
+            "3orchidShirt4.jpg"
+          ],
+        alt: [
+          "CLose up of the Triple orchid t shirt in heather gray. featuring 3 orchd illustrations",
+          "Woman wearing the Triple orchid t shirt in black. featuring 3 orchd illustrations",
+          "Woman wearing the Triple orchid t shirt in white. featuring 3 orchd illustrations",
+        ],
+        title: "Triple Orchid T-shirt",
+        date : "2024",
+        body : "The Triple Orchid T-shirt features intricate, colorful illustrations of 3 different orchids. Developed in Adobe Illustrator.",
+        width: "600",
+        url  : ""
+      },
+      {
         type : "commart",
         icon : "steelpulse.png",
         image: "steelpulse.png",
