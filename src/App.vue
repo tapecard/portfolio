@@ -35,6 +35,7 @@ import data_store from './assets/data_store.js';
     <div v-for="(item, i) in data_store" 
       :key="i" 
       class="project__area"
+      :id="'proj-'+i"
       :class="i == 0 ? 'area--open' : ''">
 
       <div v-if="i==0">
@@ -44,6 +45,12 @@ import data_store from './assets/data_store.js';
           <img class="home__image" src="@/assets/Hero_dream.jpg" :alt="data_store[i].projects[0].alt" />
         </button>
           <h3 class="area__description">{{ data_store[i].section_description }}</h3>
+          <button :disabled="i === f" class="footer__buttons" 
+              v-for="(item, f) in data_store" 
+              :key="f" 
+              @click="selectArea(f)">
+            <span>{{ data_store[f].section }}</span>
+          </button>
       </div>
 
       <div v-else-if="i>0">
@@ -54,17 +61,19 @@ import data_store from './assets/data_store.js';
           :projectData="project" 
           @dialogData="setData($event)"
           />
+
+        <div class="footer__links">
+
+          <button :disabled="i === f" class="footer__buttons" 
+              v-for="(item, f) in data_store" 
+              :key="f" 
+              @click="selectArea(f)">
+            <span>{{ data_store[f].section }}</span>
+          </button>
+        </div>
       </div>
     </div>
 
-    <div class="footer__links">
-      <button class="footer__buttons" 
-          v-for="(item, f) in data_store" 
-          :key="f" 
-          @click="selectArea(f)">
-        <span>{{ data_store[f].section }}</span>
-      </button>
-    </div>
     <div class="copyright">
      All work &copy;{{ thisYear }} Michael P. Cohen
     </div>
@@ -157,8 +166,11 @@ export default {
   right: 0;
 }
 .footer__links {
-  max-width: calc(100% - 60px);
-  margin: 0 auto;
+  bottom: 20px;
+  display: flex;
+  justify-content: center;
+  left: 0;
+  width: 100%;
 }
 .footer__buttons,
 .hero__target {
@@ -172,11 +184,23 @@ export default {
   color: #fff;
   font-size: 1rem;
 }
-.footer__buttons:hover {
-  text-decoration: underline
+.footer__buttons {
+  &:hover {
+    text-decoration: underline;
+  }
+  &:disabled {
+    display: none;
+  }
 }
+
 .copyright {
+  position: absolute;
   font-size: .75rem;
+  top: 120px;
+  right: -100px;
+  width: 230px;
+  rotate: 90deg;
+  text-align: center;
 }
 .headline__links a {
   display: inline;
@@ -211,8 +235,7 @@ export default {
 .area--open span {
   font-size: 14px;
   line-height: 1;
-  top: 130px;
-  position: absolute;
+  position: relative;
   text-align: center;
   width: 100%;
   z-index: -1;
