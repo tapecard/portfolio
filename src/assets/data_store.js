@@ -65,7 +65,7 @@ const data = [
         title: "Hypertext Party",
         alt  : "Screenshot of Hypertext Party web app",
         date : "2024",
-        body : "Hypertext Party is inspired by the Animate.css library. This proof of concept tool demonstrates various animated text effects. Developed using a component structure in Vue.js, it serves as a playground for working and developing in Vue as well as trying out new ideas for text-based special effects.",
+        body : "Hypertext Party is inspired by the animate.css library. This proof of concept tool demonstrates various animated text effects. Developed using a component structure in Vue.js, it serves as a playground for working and developing in Vue as well as trying out new ideas for text-based special effects.",
         width: "600",
         url  : "https://tapecard.com/hypertext/"
       },
@@ -89,7 +89,7 @@ const data = [
             "screenshot of Skeet Sheet Round Edit screen.",
             "screenshot of Skeet Sheet Station Averages screen.",
             "screenshot of Skeet Sheet mobile component.",
-            "closeup screenshot of Station Averages screen."
+            "closeup screenshot of Station Averages."
           ],
         date : "2011",
         body : "Skeet sheet is a web app for storing and analizing skeet score data. A multi-part project requiring PHP, MySQL, CSS, and Javascript. It features an innovative user controlled picklist in a space saving layout designed for handhelds. Users can track scores round by round on a handheld device, then upload the scores for later analysis in the desktop module.",
@@ -129,7 +129,7 @@ const data = [
         ],
         title: "Last Chair Sweatshirt",
         date : "2024",
-        body : "Last Chair Snowboard Sweatshirt design includes all-over printing on the front back and sleeves. An innovative design that hangs the chairlift around the wearers neck like a necklace, the image also reflects the hazy etherial conditions in the mountains.",
+        body : "Last Chair Snowboard Sweatshirt design includes all-over printing on the front, back and sleeves. An innovative design that hangs the chairlift around the wearers neck like a necklace, the image reflects the hazy etherial conditions in the mountains. Done in Adobe Illustrator",
         width: "400",
         url  : ""
       },
@@ -341,7 +341,7 @@ const data = [
         posterframe : "training.jpg",
         date : "2007",
         body : "A video outlining the benefits of the USAEC software training program for environmental professionals who need to interface with USAEC Software. Drew the storyboards, shot the video, edited the footage, and developed the delivery.",
-        width: "640",
+        width: "",
         url  : ""
           }
         ]

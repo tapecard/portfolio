@@ -169,8 +169,8 @@ export default {
   bottom: 20px;
   display: flex;
   justify-content: center;
-  left: 0;
-  width: 100%;
+  width: calc(100% - 16px);
+  margin: 0 auto;
 }
 .footer__buttons,
 .hero__target {
@@ -258,7 +258,7 @@ export default {
   width: 600px;
   left: -284px;
   top: 300px;
-  opacity: .5;
+  opacity: .6;
 }
 .area__description {
   font-size: 1.25rem;

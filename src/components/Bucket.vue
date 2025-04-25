@@ -90,7 +90,18 @@ export default {
 }
 @media (max-width: 500px) {
   .area__bucket {
-    width: 85%;
+    width: 42%;
+    margin: 5px;
+
+  span {
+      font-size: .75rem;
+      padding-right: 4px;
+    }
+  }
+  .area__icon {
+    width: 42px;
+    height: 42px;
+    margin: 5px 7px 5px -5px; 
   }
 }
 </style>

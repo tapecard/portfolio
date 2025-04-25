@@ -65,7 +65,7 @@ body {
   background-color: #fff;
   transition:
     color 0.5s,
-    background-color 0.5s;
+    background 1s;
   line-height: 1.6;
   font-family:
     Inter,
